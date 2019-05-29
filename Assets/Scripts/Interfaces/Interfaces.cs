@@ -11,3 +11,8 @@ public interface ICommandInput
     bool CommandKey { get; }
 
 }
+
+public interface IHealth
+{
+    void UpdateHealth(int changeInHealth);
+}
