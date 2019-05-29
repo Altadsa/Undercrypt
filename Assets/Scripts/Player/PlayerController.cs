@@ -5,6 +5,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Rigidbody _playerRb;
     [SerializeField] Animator _playerAnimator;
     [SerializeField] Transform _groundCheck;
+    [SerializeField] PlayerSword _playerSword;
 
     IAxisInput _inputs;
     PlayerMovement _playerMovement;
@@ -26,6 +27,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             _playerAnimator.SetTrigger("Attack");
+            _playerSword.Attack();
         }
     }
 

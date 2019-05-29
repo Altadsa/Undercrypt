@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 7252592592194421777}
   - component: {fileID: 3113244512964302709}
   - component: {fileID: 4060390312523125569}
+  - component: {fileID: 5798910598994363804}
+  - component: {fileID: 5747649310189761179}
   m_Layer: 0
   m_Name: Weapon
   m_TagString: Untagged
@@ -79,6 +81,32 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &5798910598994363804
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 585227906801218002}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1, y: 0.8675005, z: 0.02000018}
+  m_Center: {x: 0, y: 0.31625015, z: 0}
+--- !u!114 &5747649310189761179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 585227906801218002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b4f31eaef8e724459a56280006a96d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _swordCollider: {fileID: 5798910598994363804}
 --- !u!1 &2653266826505845225
 GameObject:
   m_ObjectHideFlags: 0
@@ -159,6 +187,7 @@ MonoBehaviour:
   _playerRb: {fileID: 2653266827239629112}
   _playerAnimator: {fileID: 6244372138280922883}
   _groundCheck: {fileID: 2653266826505845226}
+  _playerSword: {fileID: 5747649310189761179}
 --- !u!54 &2653266827239629112
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -274,11 +303,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2653266827239629110}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: a15336497841dc54d9f6d8d297bba6d3,
-        type: 3}
-      propertyPath: m_Name
-      value: Player_Avatar
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: a15336497841dc54d9f6d8d297bba6d3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -339,6 +363,11 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: dfa3e5c5ad5355f4ba4c07daaca0f58a, type: 2}
+    - target: {fileID: -927199367670048503, guid: a15336497841dc54d9f6d8d297bba6d3,
+        type: 3}
+      propertyPath: m_Name
+      value: Player_Avatar
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a15336497841dc54d9f6d8d297bba6d3, type: 3}
 --- !u!4 &4044923652410442361 stripped
