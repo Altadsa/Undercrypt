@@ -7,10 +7,11 @@ public class PlayerHealth : MonoBehaviour, IHealth
 
     public event Action<int, int> OnHealthChanged;
 
-    private void Awake()
+    private void Start()
     {
         _maxHealth = 40;
         _currentHealth = _maxHealth;
+        OnHealthChanged?.Invoke(_currentHealth,_maxHealth);
     }
 
     public void UpdateHealth(int changeInHealth)
