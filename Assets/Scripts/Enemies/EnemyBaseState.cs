@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 
+[Serializable]
 public abstract class EnemyBaseState
 {
     protected Enemy _enemy;
