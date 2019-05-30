@@ -20,7 +20,15 @@ public class StationaryState : EnemyBaseState
     public override Type UpdateState()
     {
         _timeStationary += Time.deltaTime;
-        //TODO insert LOS Code
+
+        var potentialPlayer = _enemy.Vision.UpdateVision();
+        if (potentialPlayer)
+        {
+            _enemy.SetPlayer(potentialPlayer);
+            //_animator.SetTrigger("Alerted");
+            //_animator.SetBool("HasTarget", true);
+            return typeof(ChaseState);
+        }
         if (_timeStationary >= _stateDuration)
         {
             _timeStationary = 0;
