@@ -20,8 +20,8 @@ public class CameraRotator
 
     public void RotateCamera()
     {
-        SetCursorMode();
-        _cameraArm.eulerAngles = Rotate();
+        LockCursor();
+        _cameraArm.eulerAngles = CalculateCameraRotation();
     }
 
     private void SetCursorMode()
@@ -32,13 +32,9 @@ public class CameraRotator
             UnlockCursor();
     }
 
-    Vector3 Rotate()
-    {
-        return RotationButtonsPressed ? CalculateCameraRotation() : _cameraArm.eulerAngles;
-    }
+
     protected Vector3 CalculateCameraRotation()
     {
-        LockCursor();
         float rX = Mathf.Clamp(_cameraArm.eulerAngles.x - _camAxisInput.Vertical * _ySensitivity * Time.deltaTime, MIN_VERTICAL_ROTATION, MAX_VERTICAL_ROTATION);
         float rY = _cameraArm.eulerAngles.y + _camAxisInput.Horizontal * _xSensitivity * Time.deltaTime;
         return new Vector3(rX, rY, 0);

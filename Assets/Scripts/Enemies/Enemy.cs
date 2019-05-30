@@ -1,19 +1,56 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public EnemyStateMachine StateMachine { get; private set; }
+
+    private void Awake()
     {
-        
+        var initialStates = new List<EnemyBaseState>()
+        {
+            new StationaryState(this),
+            new WanderState(this)
+        };
+        StateMachine = new EnemyStateMachine(initialStates);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        StateMachine.UpdateStateMachine();
+    }
+}
+
+public class EnemyStateMachine
+{
+    private List<EnemyBaseState> _possibleStates;
+    private EnemyBaseState _currentState;
+
+    public EnemyStateMachine(List<EnemyBaseState> possibleStates)
+    {
+        _possibleStates = possibleStates;
+    }
+
+    public void UpdateStateMachine()
+    {
+        if (_currentState == null)
+        {
+            _currentState = _possibleStates.First();
+        }
+
+        var nextState = _currentState?.UpdateState();
+        if (nextState != null
+            && nextState != _currentState.GetType())
+        {
+            ChangeState(nextState);
+        }
+    }
+
+    private void ChangeState(Type nextState)
+    {
+        _currentState = _possibleStates.FirstOrDefault(s => s.GetType() == nextState);
     }
 }
