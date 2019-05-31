@@ -24,9 +24,10 @@ public class PlayerSword : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<EnemyHealth>())
+        var enemyHealth = other.GetComponentInParent<EnemyHealth>();
+        if (enemyHealth)
         {
-            other.GetComponent<EnemyHealth>().UpdateHealth(-1);
+            enemyHealth.UpdateHealth(-1);
         }
     }
 }
