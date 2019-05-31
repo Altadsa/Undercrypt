@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 
 public class EnemyStateMachine
 {
@@ -14,6 +15,7 @@ public class EnemyStateMachine
 
     public void UpdateStateMachine()
     {
+        Debug.Log(_currentState);
         if (_currentState == null)
         {
             _currentState = _possibleStates.First();

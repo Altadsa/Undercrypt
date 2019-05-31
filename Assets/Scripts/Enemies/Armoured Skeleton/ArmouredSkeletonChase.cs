@@ -4,6 +4,7 @@ using Object = UnityEngine.Object;
 
 public class ArmouredSkeletonChase : EnemyBaseState
 {
+    private float _combatRange = 3;
     public ArmouredSkeletonChase(Enemy enemy) : base(enemy)
     {
     }
@@ -17,9 +18,9 @@ public class ArmouredSkeletonChase : EnemyBaseState
         else
         {
             _agent.SetDestination(_enemy.Player.position);
-            if (Vector3.Distance(_transform.position, _enemy.Player.position) < 2f)
+            if (Vector3.Distance(_transform.position, _enemy.Player.position) <= _combatRange)
             {
-
+                _agent.SetDestination(_transform.position);
                 Debug.Log("In Attacking Ranges");
                 return typeof(ArmouredSkeletonCombat);
             }
