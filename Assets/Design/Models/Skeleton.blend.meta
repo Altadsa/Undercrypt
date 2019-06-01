@@ -12,6 +12,15 @@ ModelImporter:
   - first:
       74: -1761944717740928826
     second: Armoured_Walking
+  - first:
+      74: -7966575032062535692
+    second: Armoured_Attacking
+  - first:
+      74: -7898954982103806247
+    second: Armoured_Jump
+  - first:
+      74: -1265141716472310596
+    second: Armoured_Death
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -32,7 +41,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 1
+    animationCompression: 0
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -44,6 +53,51 @@ ModelImporter:
       name: Armoured_Idle
       takeName: Armoured_Idle
       internalID: -1940061446322360741
+      firstFrame: -1
+      lastFrame: 29
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 0.17324562
+        functionName: StartJump
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 19953748205bc844d8b0c3c56b935de5,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.34649122
+        functionName: EndJump
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 19953748205bc844d8b0c3c56b935de5,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armoured_Walking
+      takeName: Armoured_Walking
+      internalID: -1761944717740928826
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -70,9 +124,9 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armoured_Walking
-      takeName: Armoured_Walking
-      internalID: -1761944717740928826
+      name: Armoured_Attacking
+      takeName: Armoured_Attacking
+      internalID: -7966575032062535692
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -81,7 +135,81 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 0
+        functionName: StartAttack
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 19953748205bc844d8b0c3c56b935de5,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.6403509
+        functionName: EndAttack
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 19953748205bc844d8b0c3c56b935de5,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armoured_Jump
+      takeName: Armoured_Jump
+      internalID: -7898954982103806247
+      firstFrame: -1
+      lastFrame: 59
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armoured_Death
+      takeName: Armoured_Death
+      internalID: -1265141716472310596
+      firstFrame: -1
+      lastFrame: 59
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0

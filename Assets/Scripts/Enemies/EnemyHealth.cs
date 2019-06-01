@@ -1,10 +1,13 @@
-﻿using UnityEngine;
+﻿using System.Security.Cryptography;
+using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour, IHealth
 {
     [SerializeField] private int _maxHeath = 1;
-    [SerializeField] private int _currentHealth;
 
+    [SerializeField] private Animator _animator;
+    [SerializeField] private Enemy _enemy;
+    private int _currentHealth;
     private void Start()
     {
         _currentHealth = _maxHeath;
@@ -15,7 +18,9 @@ public class EnemyHealth : MonoBehaviour, IHealth
         _currentHealth = ChangeHealth(changeInHealth);
         if (_currentHealth <= 0)
         {
-            Destroy(gameObject);
+            _animator.SetTrigger("Die");
+            _enemy.enabled = false;
+            Destroy(gameObject, 5);
         }
     }
 

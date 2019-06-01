@@ -4,7 +4,7 @@ using Object = UnityEngine.Object;
 
 public class ArmouredSkeletonChase : EnemyBaseState
 {
-    private float _combatRange = 3;
+    private float _combatRange = 2;
     public ArmouredSkeletonChase(Enemy enemy) : base(enemy)
     {
 
