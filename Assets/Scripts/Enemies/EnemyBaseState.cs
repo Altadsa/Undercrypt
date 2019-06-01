@@ -14,7 +14,7 @@ public abstract class EnemyBaseState
     {
         _enemy = enemy;
         _transform = enemy.transform;
-        //_animator = enemy.GetComponent<Animator>();
+        _animator = enemy.GetComponentInChildren<Animator>();
         _agent = enemy.GetComponent<NavMeshAgent>();
     }
 

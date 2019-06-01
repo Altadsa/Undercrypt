@@ -14,7 +14,6 @@ public class ArmouredSkeletonCombat : EnemyBaseState
     private float _manoeuvreTime = 3, _timeSinceLastManoeuvre = 0;
     public ArmouredSkeletonCombat(Enemy enemy) : base(enemy)
     {
-        _animator = enemy.GetComponentInChildren<Animator>();
     }
 
     public override Type UpdateState()
