@@ -6,6 +6,9 @@ public class CameraController : MonoBehaviour
     [SerializeField] Transform _playerTransform;
     [SerializeField] bool _joystickEnabled = false;
 
+    [SerializeField] private Transform _lockOnTarget;
+
+
     IAxisInput _cameraAxisInput;
     
     Camera _mainCamera;
@@ -22,6 +25,7 @@ public class CameraController : MonoBehaviour
         _mainCamera = Camera.main;
         _cameraRotator = new CameraRotator(_cameraAxisInput, transform);
         _cameraCollision = new CameraCollision(_mainCamera.transform, transform);
+        _cameraRotator.LockTarget(_lockOnTarget);
     }
 
     void Update()

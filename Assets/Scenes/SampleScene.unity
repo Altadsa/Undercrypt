@@ -3108,7 +3108,7 @@ PrefabInstance:
     - target: {fileID: 4498852937359009698, guid: f89026fe71c042c45a0a4016eae2786f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.16
+      value: -5.27
       objectReference: {fileID: 0}
     - target: {fileID: 4498852937359009698, guid: f89026fe71c042c45a0a4016eae2786f,
         type: 3}
@@ -3208,7 +3208,7 @@ PrefabInstance:
     - target: {fileID: 5573150662923454018, guid: f89026fe71c042c45a0a4016eae2786f,
         type: 3}
       propertyPath: near clip plane
-      value: 0.1
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 5573150662923454018, guid: f89026fe71c042c45a0a4016eae2786f,
         type: 3}
@@ -3219,6 +3219,11 @@ PrefabInstance:
         type: 3}
       propertyPath: field of view
       value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 5573150662923454018, guid: f89026fe71c042c45a0a4016eae2786f,
+        type: 3}
+      propertyPath: m_NormalizedViewPortRect.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1092210949821058296, guid: f89026fe71c042c45a0a4016eae2786f,
         type: 3}
@@ -3285,6 +3290,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.8
       objectReference: {fileID: 0}
+    - target: {fileID: 5573150663886837633, guid: f89026fe71c042c45a0a4016eae2786f,
+        type: 3}
+      propertyPath: _lockOnTarget
+      value: 
+      objectReference: {fileID: 1183536265}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f89026fe71c042c45a0a4016eae2786f, type: 3}
 --- !u!1001 &2241747085287575085

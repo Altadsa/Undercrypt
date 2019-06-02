@@ -10,6 +10,10 @@ public class CameraRotator
     private IAxisInput _camAxisInput;
     private Transform _cameraArm;
 
+
+    private Transform _lockedTarget;
+    private bool _targetLocked = false;
+
     private bool RotationButtonsPressed => Input.GetMouseButton(1) || Input.GetMouseButton(0);
 
     public CameraRotator(IAxisInput cameraAxisInput, Transform cameraArm)
@@ -20,8 +24,31 @@ public class CameraRotator
 
     public void RotateCamera()
     {
-        LockCursor();
-        _cameraArm.eulerAngles = CalculateCameraRotation();
+        if (!_targetLocked)
+        {
+            LockCursor();
+            _cameraArm.eulerAngles = CalculateCameraRotation(); 
+        }
+        else
+        {
+            if (!_lockedTarget)
+                LockTarget(null);
+            Vector3 targetDirection = _lockedTarget.position - _cameraArm.position;
+            targetDirection.Normalize();
+            //targetDirection.y = 0;
+
+            if (targetDirection == Vector3.zero)
+                targetDirection = _cameraArm.forward;
+            Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
+            _cameraArm.rotation = Quaternion.Slerp(_cameraArm.rotation, targetRotation, 9);
+
+        }
+    }
+
+    public void LockTarget(Transform _target)
+    {
+        _lockedTarget = _target;
+        _targetLocked = _target;
     }
 
     private void SetCursorMode()
