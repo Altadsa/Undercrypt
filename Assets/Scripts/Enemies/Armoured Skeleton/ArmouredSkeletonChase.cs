@@ -12,17 +12,18 @@ public class ArmouredSkeletonChase : EnemyBaseState
 
     public override Type UpdateState()
     {
+        _animator.SetBool("Moving", _agent.hasPath);
+        _transform.LookAt(_player, Vector3.up);
         if (!_enemy.Player)
         {
             _enemy.SetPlayer(Object.FindObjectOfType<PlayerController>().transform);
+            _player = _enemy.Player;
         }
         else
         {
-            _agent.SetDestination(_enemy.Player.position);
-            _animator.SetBool("Moving", true);
-            if (Vector3.Distance(_transform.position, _enemy.Player.position) <= _combatRange)
+            _agent.SetDestination(_player.position);
+            if (InAttackRange)
             {
-                _animator.SetBool("Moving", false);
                 _agent.SetDestination(_transform.position);
                 return typeof(ArmouredSkeletonCombat);
             }

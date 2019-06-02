@@ -10,7 +10,10 @@ public class ArmouredSkeleton : Enemy
         var initialStates = new List<EnemyBaseState>()
         {
             new ArmouredSkeletonChase(this),
-            new ArmouredSkeletonCombat(this)
+            new ArmouredSkeletonCombat(this),
+            new ArmouredSkeletonAttack(this),
+            new ArmouredSkeletonLeap(this),
+            new ArmouredSkeletonManoeuvre(this)
         };
         StateMachine = new EnemyStateMachine(initialStates);
         _audioSrc.Play();
