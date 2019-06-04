@@ -4,7 +4,7 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour, IHealth
 {
     [SerializeField] private int _maxHeath = 1;
-
+    [SerializeField] private AudioSource _damageAudio;
     [SerializeField] private Animator _animator;
     [SerializeField] private Enemy _enemy;
     private int _currentHealth;
@@ -26,6 +26,8 @@ public class EnemyHealth : MonoBehaviour, IHealth
 
     private int ChangeHealth(int amountToChange)
     {
+        if (amountToChange < 0)
+            _damageAudio.Play();
         return Mathf.Clamp(_currentHealth + amountToChange, 0, _maxHeath);
     }
 }

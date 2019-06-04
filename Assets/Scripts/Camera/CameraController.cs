@@ -2,42 +2,39 @@
 
 public class CameraController : MonoBehaviour
 {
-    [SerializeField] private float _zoomSpeed;
+    [SerializeField] private CameraSettings _settings;
     [SerializeField] Transform _playerTransform;
-    [SerializeField] bool _joystickEnabled = false;
-
     [SerializeField] private Transform _lockOnTarget;
 
-
-    IAxisInput _cameraAxisInput;
-    
     Camera _mainCamera;
-
+    IAxisInput _cameraAxisInput;
     CameraRotator _cameraRotator;
     CameraCollision _cameraCollision;
     CameraZoom _cameraZoom;
 
     private void Awake()
     {
-        _cameraAxisInput = _joystickEnabled
-            ? _cameraAxisInput = new JoystickCameraAxisInput()
-            : _cameraAxisInput = new MouseCameraAxisInput();
         _mainCamera = Camera.main;
-        _cameraRotator = new CameraRotator(_cameraAxisInput, transform);
-        _cameraCollision = new CameraCollision(_mainCamera.transform, transform);
-        _cameraRotator.LockTarget(_lockOnTarget);
+        _cameraAxisInput = _settings.AxisSettings();
+        _cameraRotator = _settings.RotationSettings(_cameraAxisInput, transform);
+        _cameraCollision = _settings.CollisionSettings(_mainCamera.transform, transform);
+        _cameraZoom = _settings.ZoomSettings(_mainCamera.transform);
+        //_cameraRotator.LockTarget(_lockOnTarget);
     }
 
     void Update()
     {
-        _cameraAxisInput.ReadInput();
-        _cameraRotator.RotateCamera();
-        _cameraCollision.CheckForCameraCollision();
+        _cameraAxisInput?.ReadInput();
+        _cameraRotator?.RotateCamera();
+        _cameraCollision?.CheckForCameraCollision();
+        _cameraZoom?.Update();
     }
 
     private void LateUpdate()
     {
         transform.position = _playerTransform.position + Vector3.up;
     }
+
+
 
 }

@@ -135,10 +135,10 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3392917835331976806}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 0.1, y: 0.86750054, z: 0.020000072}
+  m_Size: {x: 0.25, y: 1, z: 0.020000072}
   m_Center: {x: 0.000000008246861, y: 0.31625018, z: 0.0000009725243}
 --- !u!114 &5305317250378774448
 MonoBehaviour:
@@ -179,11 +179,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Knight_Backup
       objectReference: {fileID: 0}
-    - target: {fileID: -6057140222963153312, guid: 0877b070bbc9f22499451400266c6e4d,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: dfa3e5c5ad5355f4ba4c07daaca0f58a, type: 2}
     - target: {fileID: -4216859302048453862, guid: 0877b070bbc9f22499451400266c6e4d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -239,6 +234,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: 0877b070bbc9f22499451400266c6e4d,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: dfa3e5c5ad5355f4ba4c07daaca0f58a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0877b070bbc9f22499451400266c6e4d, type: 3}
 --- !u!1 &9104445753599797450 stripped

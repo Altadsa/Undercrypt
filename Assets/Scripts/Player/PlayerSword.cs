@@ -22,9 +22,9 @@ public class PlayerSword : MonoBehaviour
         _swordCollider.enabled = false;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        var enemyHealth = other.GetComponentInParent<EnemyHealth>();
+        var enemyHealth = collision.gameObject.GetComponentInParent<EnemyHealth>();
         if (enemyHealth)
         {
             enemyHealth.UpdateHealth(-1);
