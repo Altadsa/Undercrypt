@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using UnityEditor.Experimental.GraphView;
+using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
@@ -28,6 +29,14 @@ public class PlayerController : MonoBehaviour
         {
             _playerAnimator.SetTrigger("Attack");
             _playerSword.Attack();
+        }
+        else if (Input.GetMouseButtonDown(1))
+        {
+            _playerAnimator.SetBool("Defensive", true);
+        }
+        else if (Input.GetMouseButtonUp(1))
+        {
+            _playerAnimator.SetBool("Defensive", false);
         }
     }
 
