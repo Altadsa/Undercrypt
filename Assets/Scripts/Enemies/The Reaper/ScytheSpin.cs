@@ -12,14 +12,14 @@ public class ScytheSpin : BossBaseState
 
     public override Type UpdateState()
     {
-        //Set Animator To Spin Attack
+        _animator.SetBool("Spin Attack", true);
         while (_timeSpinning < _spinTime)
         {
             _timeSpinning += Time.deltaTime;
             _agent.SetDestination(_player.position);
             return typeof(ScytheSpin);
         }
-
+        _animator.SetBool("Spin Attack", false);
         _timeSpinning = 0;
         _agent.SetDestination(_originalPosition);
         return typeof(ReaperPhase2);

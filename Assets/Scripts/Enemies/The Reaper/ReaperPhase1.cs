@@ -17,6 +17,8 @@ public class ReaperPhase1 : BossBaseState
             return typeof(ReaperPhase2);
         }
 
+        if (_agent.hasPath) return typeof(ReaperPhase1);
+
         return _enemy.AreasOfEffect.childCount < 4 
             ? typeof(ScytheAoE) 
             : typeof(ScytheAttack);

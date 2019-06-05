@@ -25,12 +25,13 @@ public class ShadowVolley : BossBaseState
             }
 
             _timeSinceLastSpawn = 0;
-            Object.Instantiate(_projectilePrefab, RandomPosition, Quaternion.identity, _enemy.AreasOfEffect);
+            GameObject proj = Object.Instantiate(_projectilePrefab, _transform.position  + 2 * Vector3.up, Quaternion.identity, _enemy.AreasOfEffect);
+            proj.transform.forward = RandomDirection;
             _projectileCount++;
         }
         _projectileCount = 0;
         return typeof(ReaperPhase3);
     }
 
-    private Vector3 RandomPosition => _transform.position + new Vector3(Random.Range(-1,1f),0,Random.Range(-1,1f)).normalized * Random.Range(0,10);
+    private Vector3 RandomDirection => new Vector3(Random.Range(-1, 1f), Random.Range(0.1f, 0.8f), Random.Range(-1, 1f)).normalized;
 }
