@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 
-[System.Serializable]
 public class CameraRotator
 {
     private const float MIN_VERTICAL_ROTATION = 10, MAX_VERTICAL_ROTATION = 90;
