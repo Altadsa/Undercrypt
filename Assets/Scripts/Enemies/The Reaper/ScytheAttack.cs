@@ -14,6 +14,7 @@ public class ScytheAttack : BossBaseState
 
     public override Type UpdateState()
     {
+        _transform.LookAt(_player, Vector3.up);
         if (!_attackFinished)
         {
             _attackFinished = true;

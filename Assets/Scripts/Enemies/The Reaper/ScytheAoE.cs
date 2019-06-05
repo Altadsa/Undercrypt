@@ -13,14 +13,13 @@ public class ScytheAoE : BossBaseState
 
     public override Type UpdateState()
     {
+        _transform.LookAt(_player, Vector3.up);
         if (_timerCd >= _timeToSpawn)
         {
-            Vector3 spawnDirection = Vector3.Scale((_player.position - _transform.position).normalized,
-                new Vector3(1, 0, 1));
-            float spawnAngle = Vector3.SignedAngle(_transform.forward, spawnDirection, Vector3.up);
             _timerCd = 0;
+            _animator.SetTrigger("Slash");
             Object.Instantiate(_aoePrefab, _transform.position,
-                Quaternion.Euler(0, spawnAngle,0), _enemy.AreasOfEffect);
+                Quaternion.identity, _enemy.AreasOfEffect).transform.forward = _transform.forward;
             return _bossHealth.HealthRemaining > 0.66f ? typeof(ReaperPhase1) : typeof(ReaperPhase2);
         }
 

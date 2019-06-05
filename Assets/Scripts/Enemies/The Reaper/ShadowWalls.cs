@@ -16,11 +16,6 @@ public class ShadowWalls : BossBaseState
             ojbs[i] = _enemy.AreasOfEffect.GetChild(i).gameObject;
         }
 
-        foreach (var gameObject in ojbs)
-        {
-            gameObject.SetActive(false);
-        }
-
         return typeof(ReaperPhase3);
     }
 }
