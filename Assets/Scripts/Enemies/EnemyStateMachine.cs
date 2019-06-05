@@ -15,7 +15,7 @@ public class EnemyStateMachine
 
     public void UpdateStateMachine()
     {
-        //Debug.Log(_currentState);
+        Debug.Log(_currentState);
         if (_currentState == null)
         {
             _currentState = _possibleStates.First();

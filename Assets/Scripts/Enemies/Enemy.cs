@@ -8,6 +8,8 @@ public abstract class Enemy : MonoBehaviour
     public EnemyVision Vision { get; private set; }
     public EnemyStateMachine StateMachine { get; protected set; }
 
+    public Transform AreasOfEffect;
+
     public void SetPlayer(Transform player)
     {
         Player = player;

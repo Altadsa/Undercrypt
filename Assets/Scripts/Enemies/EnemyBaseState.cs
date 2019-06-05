@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.AI;
+using Object = UnityEngine.Object;
 
 [Serializable]
 public abstract class EnemyBaseState
@@ -24,4 +25,15 @@ public abstract class EnemyBaseState
     }
 
     public abstract Type UpdateState();
+}
+
+[Serializable]
+public abstract class BossBaseState : EnemyBaseState
+{
+    protected EnemyHealth _bossHealth;
+    protected BossBaseState(Enemy enemy, EnemyHealth bossHealth) : base(enemy)
+    {
+        _bossHealth = bossHealth;
+        _player = Object.FindObjectOfType<PlayerHealth>().transform;
+    }
 }

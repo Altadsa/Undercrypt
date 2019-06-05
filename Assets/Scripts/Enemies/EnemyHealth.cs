@@ -1,13 +1,14 @@
-﻿using System.Security.Cryptography;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour, IHealth
 {
+    public float HealthRemaining => (float) _currentHealth /  _maxHeath;
+
     [SerializeField] private int _maxHeath = 1;
     [SerializeField] private AudioSource _damageAudio;
     [SerializeField] private Animator _animator;
     [SerializeField] private Enemy _enemy;
-    private int _currentHealth;
+    [SerializeField] private int _currentHealth;
     private void Start()
     {
         _currentHealth = _maxHeath;
