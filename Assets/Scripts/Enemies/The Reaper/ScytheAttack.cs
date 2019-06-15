@@ -17,18 +17,29 @@ public class ScytheAttack : BossBaseState
 
     public override Type UpdateState()
     {
-        //_transform.forward = Vector3.Scale((_player.position - _transform.position).normalized, new Vector3(1, 0, 1));
         if (!_destinationSet)
         {
-            _attackPosition = _player.position;
-            _normalSpeed = _agent.acceleration;
-            _agent.acceleration = _attackSpeed;
-            _agent.SetDestination(_attackPosition);
-            _destinationSet = true;
+            if (_timeStuck >= 2)
+            {
+                _timeStuck = 0;
+                _attackPosition = _player.position;
+                _normalSpeed = _agent.acceleration;
+                _agent.acceleration = _attackSpeed;
+                _agent.SetDestination(_attackPosition);
+                _destinationSet = true;
+                _transform.forward = Vector3.Scale((_player.position - _transform.position).normalized, new Vector3(1, 0, 1));
+
+            }
+
+            _timeStuck += Time.deltaTime;
         }
 
         if (_destinationSet)
         {
+            if (_agent.remainingDistance < 2)
+            {
+                _animator.SetBool("Strike", true);
+            }
             if (!_agent.hasPath)
             {
                 _agent.acceleration = _normalSpeed;
@@ -40,6 +51,8 @@ public class ScytheAttack : BossBaseState
         _timeStuck += Time.deltaTime;
         if (_timeStuck >= _maxStickingTime)
         {
+            _animator.SetBool("Strike", false);
+
             _timeStuck = 0;
             _agent.SetDestination(_originalPosition);
             _attackFinished = false;

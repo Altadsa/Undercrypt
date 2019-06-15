@@ -1,23 +1,11 @@
 fileFormatVersion: 2
-guid: d65890cb5eb2dce49a885fc59001870e
+guid: 9ea2b8c41cfb90e41a1b347694fb4441
 ModelImporter:
   serializedVersion: 25
   internalIDToNameTable:
   - first:
       74: 1989289236423521904
     second: Default Take
-  - first:
-      74: -850589628210352159
-    second: Reaper_Idle
-  - first:
-      74: -7166711642802924608
-    second: Reaper_Slash
-  - first:
-      74: 7528100373640853835
-    second: Reaper_Whirlwind
-  - first:
-      74: -5557768262789568831
-    second: Reaper_Strike
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -47,98 +35,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Reaper_Idle
-      takeName: Reaper_Idle
-      internalID: -850589628210352159
-      firstFrame: -1
-      lastFrame: 59
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: Reaper_Slash
-      takeName: Reaper_Slash
-      internalID: -7166711642802924608
-      firstFrame: -1
-      lastFrame: 29
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: Reaper_Whirlwind
-      takeName: Reaper_Whirlwind
-      internalID: 7528100373640853835
-      firstFrame: -1
-      lastFrame: 29
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: Reaper_Strike
-      takeName: Reaper_Strike
-      internalID: -5557768262789568831
-      firstFrame: -1
-      lastFrame: 59
+      name: Default Take
+      takeName: Default Take
+      internalID: 1989289236423521904
+      firstFrame: 0
+      lastFrame: 249
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
