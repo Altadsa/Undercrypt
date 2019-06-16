@@ -81,6 +81,8 @@ MonoBehaviour:
   _playerAnimator: {fileID: 2776512281773832099}
   _groundCheck: {fileID: 2653266826505845226}
   _playerSword: {fileID: 5305317250378774448}
+  _movementSpeed: 0
+  _jumpPower: 0
 --- !u!54 &2653266827239629112
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -277,6 +279,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Avatar_Shortsword
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 5d79b647eb2af694881bbef424241038,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2013744490878062015, guid: 5d79b647eb2af694881bbef424241038,
         type: 3}
       propertyPath: m_IsActive
@@ -350,3 +357,72 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1865120739291504903}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1998401904004180868
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 4586870952309237601}
+    m_Modifications:
+    - target: {fileID: -927199367670048503, guid: c78f6d649dd3cdb4497e9802fbf8c0db,
+        type: 3}
+      propertyPath: m_Name
+      value: Champions Greatsword
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: c78f6d649dd3cdb4497e9802fbf8c0db,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.047
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: c78f6d649dd3cdb4497e9802fbf8c0db,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.027
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: c78f6d649dd3cdb4497e9802fbf8c0db,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.021
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: c78f6d649dd3cdb4497e9802fbf8c0db,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.004445122
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: c78f6d649dd3cdb4497e9802fbf8c0db,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.07110725
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: c78f6d649dd3cdb4497e9802fbf8c0db,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.063554786
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: c78f6d649dd3cdb4497e9802fbf8c0db,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.995432
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: c78f6d649dd3cdb4497e9802fbf8c0db,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: c78f6d649dd3cdb4497e9802fbf8c0db,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -1.0250001
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: c78f6d649dd3cdb4497e9802fbf8c0db,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -8.107
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: c78f6d649dd3cdb4497e9802fbf8c0db,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -7.234
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c78f6d649dd3cdb4497e9802fbf8c0db, type: 3}

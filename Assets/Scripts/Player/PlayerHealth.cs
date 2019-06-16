@@ -13,7 +13,7 @@ public class PlayerHealth : MonoBehaviour, IHealth
     private void Start()
     {
         _maxHealth = 40;
-        _currentHealth = _maxHealth;
+        _currentHealth = _maxHealth / 2;
         OnHealthChanged?.Invoke(_currentHealth,_maxHealth);
         _timeSinceDamaged = _damageCd;
     }
@@ -23,6 +23,11 @@ public class PlayerHealth : MonoBehaviour, IHealth
         if (changeInHealth < 0 && Damageable)
         {
             StartCoroutine(DamageCooldown());
+            _currentHealth = ChangeHealth(changeInHealth);
+            OnHealthChanged?.Invoke(_currentHealth, _maxHealth);
+        }
+        else
+        {
             _currentHealth = ChangeHealth(changeInHealth);
             OnHealthChanged?.Invoke(_currentHealth, _maxHealth);
         }

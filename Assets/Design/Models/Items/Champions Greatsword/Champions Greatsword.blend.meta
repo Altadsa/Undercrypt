@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: acaccf505bf993b4889d0b1a76923613
+guid: c78f6d649dd3cdb4497e9802fbf8c0db
 ModelImporter:
   serializedVersion: 25
   internalIDToNameTable:
@@ -10,18 +10,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Bottle_Cap
-    second: {fileID: 2100000, guid: 947304f786f8d4142be50949ddf7abfa, type: 2}
+      name: Handle
+    second: {fileID: 2100000, guid: 7d954221eadcac64d94d7f79348ce81e, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Bottle_Contents
-    second: {fileID: 2100000, guid: 964cdb180db102d46a83b8bf44e5d133, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Bottle_Glass
-    second: {fileID: 2100000, guid: d31ba30e612632d4781c2704d33c78aa, type: 2}
+      name: Metal
+    second: {fileID: 2100000, guid: 1eb838a8bb3971349a8adefab1cb0d79, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -114,7 +109,7 @@ ModelImporter:
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   referencedClips: []
-  importAnimation: 0
+  importAnimation: 1
   copyAvatar: 0
   humanDescription:
     serializedVersion: 3

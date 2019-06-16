@@ -28,6 +28,10 @@ public class PlayerController : MonoBehaviour
         _playerMovement.Update();
         _playerJump.Update();
         _playerCombat.Update();
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            GetComponentInParent<PlayerInventory>().UseActiveItem();
+        }
     }
 
     private void FixedUpdate()
