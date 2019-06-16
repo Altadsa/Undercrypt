@@ -14,7 +14,6 @@ public class PlayerMovement
         _playerTransform.forward * _input.Vertical + _playerTransform.right * _input.Horizontal;
     private Vector3 CameraMovement => 
         _mCamera.ScaledForward() * _input.Vertical + _mCamera.ScaledRight() * _input.Horizontal;
-    private bool RotationButtonsPressed => Input.GetMouseButton(1) && !Input.GetMouseButton(0);
 
     public PlayerMovement(IAxisInput input, Rigidbody playerRb, Animator playerAnimator, float speed)
     {
@@ -29,6 +28,7 @@ public class PlayerMovement
     public void Update()
     {
         _playerAnimator.SetFloat("WalkForce", Mathf.Abs(CameraMovement.x) + Mathf.Abs(CameraMovement.z));
+        UpdateDirection();
         _playerTransform.position += CameraMovement * _movementSpeed * Time.deltaTime;
     }
 
@@ -38,7 +38,7 @@ public class PlayerMovement
        //_playerRb.velocity = (CameraMovement * _movementSpeed * Time.fixedDeltaTime) + Physics.gravity;
     }
 
-    public void UpdatePlayerDirection()
+    private void UpdateDirection()
     {
         _playerTransform.forward = _input.HasAxisInput ? CameraMovement.normalized : _playerTransform.forward;
     }

@@ -39,17 +39,12 @@ public class PlayerController : MonoBehaviour
         _playerMovement.Move();
     }
 
-    private void LateUpdate()
-    {
-        _playerMovement.UpdatePlayerDirection();
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        foreach (var collisionContact in collision.contacts)
-        {
-            Debug.DrawRay(collisionContact.point, collisionContact.normal * 10f, Color.blue, 10);
-        }
-    }
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    foreach (var collisionContact in collision.contacts)
+    //    {
+    //        Debug.DrawRay(collisionContact.point, collisionContact.normal * 10f, Color.blue, 10);
+    //    }
+    //}
 
 }
