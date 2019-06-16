@@ -23,17 +23,17 @@ public class CameraSettings : ScriptableObject
             : null;
     }
 
-    public CameraZoom ZoomSettings(Transform mainCamera)
+    public CameraZoom ZoomSettings(Transform playerTransform)
     {
         return _canZoom
-            ? new CameraZoom(mainCamera, _zoomSpeed)
+            ? new CameraZoom(playerTransform, _zoomSpeed)
             : null;
     }
 
-    public CameraCollision CollisionSettings(Transform camera, Transform controller)
+    public CameraCollision CollisionSettings(Transform controller)
     {
         return _collisionEnabled
-            ? new CameraCollision(camera, controller)
+            ? new CameraCollision(controller)
             : null;
     }
 }

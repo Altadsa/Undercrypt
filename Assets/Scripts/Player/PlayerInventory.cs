@@ -19,7 +19,6 @@ public class PlayerInventory : MonoBehaviour
         {
             NextItem();
         }
-        Debug.Log($"Active Item: {ActiveItem}");
     }
 
     private void NextItem()

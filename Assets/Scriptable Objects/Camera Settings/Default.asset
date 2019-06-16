@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _zoomSpeed: 10
   _joystickEnabled: 0
-  _canZoom: 0
+  _canZoom: 1
   _canRotate: 1
   _collisionEnabled: 1

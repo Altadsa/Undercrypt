@@ -14,9 +14,9 @@ public class CameraCollision
 
 
 
-    public CameraCollision(Transform camera, Transform controller)
+    public CameraCollision(Transform controller)
     {
-        _camera = camera;
+        _camera = Camera.main.transform;
         _controller = controller;
     }
 
@@ -24,6 +24,6 @@ public class CameraCollision
     {
         RaycastHit hit;
         bool hasHit = Physics.Linecast(_controller.position, _cameraMax, out hit, _playerLayerMask);
-        _camera.position = !hasHit ? _defaultPosition : hit.point;
+        //_camera.position = !hasHit ? _defaultPosition : hit.point;
     }
 }
