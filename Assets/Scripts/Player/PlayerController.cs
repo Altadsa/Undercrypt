@@ -1,5 +1,4 @@
-﻿using UnityEditor.Experimental.GraphView;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
@@ -7,16 +6,20 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Animator _playerAnimator;
     [SerializeField] Transform _groundCheck;
     [SerializeField] PlayerSword _playerSword;
+    [SerializeField] private float _movementSpeed;
+    [SerializeField] private float _jumpPower;
 
     IAxisInput _inputs;
     PlayerMovement _playerMovement;
     PlayerJump _playerJump;
+    PlayerCombat _playerCombat;
 
     void Awake()
     {
         _inputs = new PlayerInput();
-        _playerMovement = new PlayerMovement(_inputs, _playerRb, _playerAnimator);
-        _playerJump = new PlayerJump(_playerRb, _playerAnimator, _groundCheck);
+        _playerMovement = new PlayerMovement(_inputs, _playerRb, _playerAnimator, _movementSpeed);
+        _playerJump = new PlayerJump(_playerRb, _playerAnimator, _groundCheck, _jumpPower);
+        _playerCombat = new PlayerCombat(_playerSword, _playerAnimator);
     }
 
     void Update()
@@ -24,20 +27,7 @@ public class PlayerController : MonoBehaviour
         _inputs.ReadInput();
         _playerMovement.Update();
         _playerJump.Update();
-
-        if (Input.GetMouseButtonDown(0))
-        {
-            _playerAnimator.SetTrigger("Attack");
-            _playerSword.Attack();
-        }
-        else if (Input.GetMouseButtonDown(1))
-        {
-            _playerAnimator.SetBool("Defensive", true);
-        }
-        else if (Input.GetMouseButtonUp(1))
-        {
-            _playerAnimator.SetBool("Defensive", false);
-        }
+        _playerCombat.Update();
     }
 
     private void FixedUpdate()
@@ -48,6 +38,14 @@ public class PlayerController : MonoBehaviour
     private void LateUpdate()
     {
         _playerMovement.UpdatePlayerDirection();
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        foreach (var collisionContact in collision.contacts)
+        {
+            Debug.DrawRay(collisionContact.point, collisionContact.normal * 10f, Color.blue, 10);
+        }
     }
 
 }

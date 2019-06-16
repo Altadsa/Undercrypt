@@ -8,7 +8,7 @@ public class PlayerMovement
     private Rigidbody _playerRb;
     private Transform _playerTransform;
     private Animator _playerAnimator;
-    private float _movementSpeed = 5f;
+    private float _movementSpeed = 2500f;
 
     private Vector3 FreeMovement =>
         _playerTransform.forward * _input.Vertical + _playerTransform.right * _input.Horizontal;
@@ -16,24 +16,26 @@ public class PlayerMovement
         _mCamera.ScaledForward() * _input.Vertical + _mCamera.ScaledRight() * _input.Horizontal;
     private bool RotationButtonsPressed => Input.GetMouseButton(1) && !Input.GetMouseButton(0);
 
-    public PlayerMovement(IAxisInput input, Rigidbody playerRb, Animator playerAnimator)
+    public PlayerMovement(IAxisInput input, Rigidbody playerRb, Animator playerAnimator, float speed)
     {
         _mCamera = Camera.main;
         _input = input;
         _playerRb = playerRb;
         _playerTransform = playerRb.transform;
         _playerAnimator = playerAnimator;
+        _movementSpeed = speed;
     }
 
     public void Update()
     {
-
         _playerAnimator.SetFloat("WalkForce", Mathf.Abs(CameraMovement.x) + Mathf.Abs(CameraMovement.z));
+        _playerTransform.position += CameraMovement * _movementSpeed * Time.deltaTime;
     }
 
     public void Move()
     {
-        _playerRb.MovePosition(_playerRb.position + CameraMovement * _movementSpeed * Time.fixedDeltaTime);
+       // _playerRb.MovePosition(_playerRb.position + CameraMovement * _movementSpeed * Time.fixedDeltaTime);
+       //_playerRb.velocity = (CameraMovement * _movementSpeed * Time.fixedDeltaTime) + Physics.gravity;
     }
 
     public void UpdatePlayerDirection()

@@ -1,12 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerHealthUi : MonoBehaviour
 {
-    private PlayerHealth _playerHealth;
+
+    [SerializeField] PlayerHealth _playerHealth;
 
     [SerializeField]
     private TMP_Text _healthText;
@@ -15,7 +14,6 @@ public class PlayerHealthUi : MonoBehaviour
 
     private void Awake()
     {
-        _playerHealth = FindObjectOfType<PlayerHealth>();
         _playerHealth.OnHealthChanged += OnHealthChanged;
     }
 

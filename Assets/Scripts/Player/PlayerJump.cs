@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class PlayerJump : ICommandInput
 {
@@ -11,11 +12,12 @@ public class PlayerJump : ICommandInput
 
     private bool _isGrounded => Physics.CheckSphere(_groundCheck.position, _groundDistance, _groundLayer);
 
-    public PlayerJump(Rigidbody playerRb, Animator playerAnimator, Transform groundCheck)
+    public PlayerJump(Rigidbody playerRb, Animator playerAnimator, Transform groundCheck, float jumpPower)
     {
         _playerRb = playerRb;
         _playerAnimator = playerAnimator;
         _groundCheck = groundCheck;
+        _jumpHeight = jumpPower;
     }
 
     public bool CommandKey => Input.GetButtonDown("Jump");
@@ -25,8 +27,8 @@ public class PlayerJump : ICommandInput
         if (CommandKey && _isGrounded)
         { 
             _playerAnimator.SetTrigger("Jump");
-            _playerRb.AddForce(Vector3.up * _jumpHeight * -2f * Physics.gravity.y);
+            _playerRb.velocity = new Vector3(_playerRb.velocity.x, _jumpHeight, _playerRb.velocity.z);
         }
-    }
 
+    }
 }
