@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2476978393292170062}
   - component: {fileID: 2476978393292170063}
-  m_Layer: 2
+  - component: {fileID: 1739461006}
+  m_Layer: 9
   m_Name: Camera Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,9 +45,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01507aa356db7724ea492ac0081d60aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _zoomSpeed: 0
+  _settings: {fileID: 11400000, guid: c20c3b14b02f36240956300a8025b41c, type: 2}
   _playerTransform: {fileID: 0}
-  _joystickEnabled: 0
+  _smoothing: 20
+--- !u!135 &1739461006
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2476978393292170049}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2476978394483618432
 GameObject:
   m_ObjectHideFlags: 0
@@ -58,7 +72,7 @@ GameObject:
   - component: {fileID: 2476978394483618433}
   - component: {fileID: 2476978394483618444}
   - component: {fileID: 2476978394483618447}
-  m_Layer: 2
+  m_Layer: 9
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}

@@ -57,7 +57,7 @@ public class CameraController : MonoBehaviour
 
     private void LateUpdate()
     {
-        _cameraRotator.RotateCamera();
+        _cameraRotator.Update();
         if (_lockOnTarget != null)
         {
             _cameraZoom.Update(_lockOnTarget);

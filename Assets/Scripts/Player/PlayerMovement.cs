@@ -40,7 +40,9 @@ public class PlayerMovement
 
     private void UpdateDirection()
     {
-        _playerTransform.forward = _input.HasAxisInput ? CameraMovement.normalized : _playerTransform.forward;
+        var newForward = _input.HasAxisInput ? CameraMovement.normalized : _playerTransform.forward;
+        var angle = Vector3.Angle(_playerTransform.forward, newForward);
+        _playerTransform.forward = Vector3.Lerp(_playerTransform.forward, newForward, Time.deltaTime * angle);
     }
 
 }

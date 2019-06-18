@@ -15,7 +15,17 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Handle__ChampionsGreatsword_Albedo_png
+    second: {fileID: 2100000, guid: 7d954221eadcac64d94d7f79348ce81e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Metal
+    second: {fileID: 2100000, guid: 1eb838a8bb3971349a8adefab1cb0d79, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal__ChampionsGreatsword_Albedo_png
     second: {fileID: 2100000, guid: 1eb838a8bb3971349a8adefab1cb0d79, type: 2}
   materials:
     importMaterials: 1
