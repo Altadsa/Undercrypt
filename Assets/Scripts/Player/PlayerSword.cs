@@ -4,10 +4,14 @@ using UnityEngine;
 public class PlayerSword : MonoBehaviour
 {
     [SerializeField] private Collider _swordCollider;
+    [SerializeField] int _damage;
+    
+    private AudioSource _audioSrc;
 
     private void Start()
     {
         _swordCollider.enabled = false;
+        _audioSrc = GetComponent<AudioSource>();
     }
 
     public void Attack()
@@ -24,10 +28,12 @@ public class PlayerSword : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        var enemyHealth = collision.gameObject.GetComponentInParent<EnemyHealth>();
+        Debug.Log(collision.gameObject);
+        var enemyHealth = collision.gameObject.GetComponent<EnemyHealth>();
         if (enemyHealth)
         {
-            enemyHealth.UpdateHealth(-1);
+            _audioSrc.Play();
+            enemyHealth.UpdateHealth(-_damage);
         }
     }
 }

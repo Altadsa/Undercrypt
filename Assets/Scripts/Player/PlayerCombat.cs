@@ -2,12 +2,13 @@
 
 public class PlayerCombat
 {
+    private Transform _swordParent;
     private PlayerSword _playerSword;
     private Animator _animator;
 
-    public PlayerCombat(PlayerSword sword, Animator animator)
+    public PlayerCombat(Transform swordParent, Animator animator)
     {
-        _playerSword = sword;
+        _swordParent = swordParent;
         _animator = animator;
     }
 
@@ -15,6 +16,7 @@ public class PlayerCombat
     {
         if (Input.GetMouseButtonDown(0))
         {
+            _playerSword = _swordParent.GetComponentInChildren<PlayerSword>();
             _animator.SetTrigger("Attack");
             _playerSword.Attack();
         }

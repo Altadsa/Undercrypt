@@ -5,16 +5,20 @@ using UnityEngine;
 public class AnimationEventController : MonoBehaviour
 {
     [SerializeField] private CapsuleCollider _body;
-    [SerializeField] private BoxCollider _weapon;
+    [SerializeField] private Transform _weaponParent;
+
+    Collider _weaponCollider;
 
     public void StartAttack()
     {
-        _weapon.enabled = true;
+        _weaponCollider = _weaponParent.GetComponentInChildren<Collider>();
+        _weaponCollider.enabled = true;
     }
 
     public void EndAttack()
     {
-        _weapon.enabled = false;
+        _weaponCollider = _weaponParent.GetComponentInChildren<Collider>();
+        _weaponCollider.enabled = false;
     }
 
     public void StartJump()

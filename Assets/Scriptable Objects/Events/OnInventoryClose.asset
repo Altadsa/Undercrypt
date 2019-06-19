@@ -9,7 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: Grappling Hook
-  m_EditorClassIdentifier: Assembly-CSharp::GrapplingHookItem
-  _isUnique: 1
+  m_Script: {fileID: 11500000, guid: c7ccdafd241c9574da1ba737df3f4a57, type: 3}
+  m_Name: OnInventoryClose
+  m_EditorClassIdentifier: 

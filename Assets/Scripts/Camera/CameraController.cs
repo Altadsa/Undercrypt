@@ -111,6 +111,13 @@ public class CameraController : MonoBehaviour
             Debug.Log(_potentialTargets.Count);
         }
     }
+
+    public void UnlockCursor()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
 }
 
 public interface ITargetable

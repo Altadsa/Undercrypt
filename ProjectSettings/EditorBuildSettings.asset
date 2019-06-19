@@ -5,7 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Scenes/Overworld.unity
+    guid: b98fe50ea79a60b42a65d15e41356d8c
+  - enabled: 1
+    path: Assets/Scenes/The Undercrypt.unity
+    guid: c934d5b4b9cd761498ffccf384ba4b0a
   m_configObjects: {}

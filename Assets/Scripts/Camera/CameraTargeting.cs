@@ -33,7 +33,7 @@ public class CameraTargeting
         var playerSp = _mainCamera.WorldToScreenPoint(_player.position);
         var targetSp = _mainCamera.WorldToScreenPoint(target.Transform.position);
 
-        Debug.Log($"Player Screen Pos: {playerSp} Target Screen Pos{targetSp}");
+
 
         AdjustCameraPosition(target);
 

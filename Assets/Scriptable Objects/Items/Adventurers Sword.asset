@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e40be9fc5ae4ecd40accd117c9e717af, type: 3}
+  m_Name: Adventurers Sword
+  m_EditorClassIdentifier: 
+  _itemId: 0
+  _icon: {fileID: 21300000, guid: 3ef67872ea46ddb4fb0a514e28b99468, type: 3}
+  _name: Adventurers Sword
+  _description: Your companion through many journeys.
+  _itemPrefab: {fileID: 3951964673085730802, guid: 304b47854cefaf5419de1e66f7214249,
+    type: 3}
