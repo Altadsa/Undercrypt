@@ -4,16 +4,21 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    public static Inventory Instance;
+    public static Inventory Instance { get; private set; }
 
     public Transform EquipmentParent;
+
+    public int Arrows { get; private set; } = 10;
+    public int Keys { get; private set; } = 0;
 
     public List<IEquippableItem> EquippableItems { get; private set; } = new List<IEquippableItem>();
     public List<IConsumableItem> ConsumableItems { get; private set; } = new List<IConsumableItem>();
 
     public IEquippableItem EquippedItem = null;
 
-    public event Action UpdateInventory;
+    public event Action UpdateEquipment;
+    public event Action UpdateConsumable; 
+
 
     private void Awake()
     {
@@ -25,7 +30,7 @@ public class Inventory : MonoBehaviour
         EquippedItem?.ItemPrefab.SetActive(false);
         EquippedItem = EquippableItems.Find(i => i.ItemId == id);
         EquippedItem.ItemPrefab.SetActive(true);
-        UpdateInventory?.Invoke();
+        UpdateEquipment?.Invoke();
     }
 
     public void AddEquippable(EquippableItemData data)
@@ -34,29 +39,18 @@ public class Inventory : MonoBehaviour
         if (!inInventory)
         {
             EquippableItems.Add(new EquippableItem(data, EquipmentParent));
-            UpdateInventory?.Invoke();
+            UpdateEquipment?.Invoke();
         }
         else
             Debug.Log($"Adventurer already has {data.Name}");
     }
 
+    public void ChangeArrowCount(int change)
+    {
+        Arrows += change;
+        UpdateConsumable?.Invoke();
+    }
+
 }
 
 
-public interface IItem
-{
-    int ItemId { get; }
-    Sprite Icon { get; }
-    string Name { get; }
-    string Description { get; }
-}
-
-public interface IEquippableItem : IItem
-{
-    GameObject ItemPrefab { get; }
-}
-
-public interface IConsumableItem : IItem
-{
-    int Quantity { get; }
-}

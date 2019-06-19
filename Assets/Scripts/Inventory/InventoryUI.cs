@@ -20,7 +20,7 @@ public class InventoryUI : MonoBehaviour
     {
         if (!Instance) Instance = this;
         _inventory = Inventory.Instance;
-        _inventory.UpdateInventory += UpdateInventory;
+        _inventory.UpdateEquipment += UpdateEquipment;
     }
 
     private void Update()
@@ -28,7 +28,7 @@ public class InventoryUI : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Tab)) _onInventoryOpen.Raise();
     }
 
-    public void UpdateInventory()
+    public void UpdateEquipment()
     {
         var weapons = _inventory.EquippableItems.ToArray();
         UpdateSlots(weapons, _WeaponSlots);
