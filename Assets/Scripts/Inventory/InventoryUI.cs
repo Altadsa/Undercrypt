@@ -12,10 +12,13 @@ public class InventoryUI : MonoBehaviour
     [SerializeField] Transform _ActionSlots;
     [SerializeField] Transform _ConsumableSlots;
 
+    public static InventoryUI Instance;
+
     Inventory _inventory;
 
     private void Start()
     {
+        if (!Instance) Instance = this;
         _inventory = Inventory.Instance;
         _inventory.UpdateInventory += UpdateInventory;
     }
@@ -38,9 +41,7 @@ public class InventoryUI : MonoBehaviour
             if (i >= slotParent.childCount)
             {
                 var newSlot = Instantiate(_slotPrefab, slotParent);
-                newSlot._index = items[i].ItemId;
-                newSlot._ui = this;
-                newSlot.GetComponent<Image>().sprite = items[i].Icon;
+                newSlot.Initialize(items[i]);
             }
         }
     }

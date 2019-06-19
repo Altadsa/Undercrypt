@@ -20,6 +20,7 @@ public class ItemAnimationOverride : MonoBehaviour
 
         if (_itemOverride != null)
             _player.runtimeAnimatorController = _itemOverride;
+
     }
 
     private void OnDisable()

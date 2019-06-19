@@ -1,19 +1,31 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
-public class InventorySlot : MonoBehaviour, IPointerDownHandler
+public class InventorySlot : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler, IPointerExitHandler
 {
-    public int _index;
-    public InventoryUI _ui;
-
-    private void Awake()
+    IItem _itemInSlot;
+    InventoryUI _inventoryUi;
+    public void Initialize(IItem item)
     {
-        Debug.Log($"Index {_index}");
+        _itemInSlot = item;
+        _inventoryUi = InventoryUI.Instance;
+        GetComponent<Image>().sprite = _itemInSlot.Icon;
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
         Debug.Log("Select");
-        _ui.SelectItem(_index);
+        _inventoryUi.SelectItem(_itemInSlot.ItemId);
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        InventoryItemInfo.Instance.ShowInfo(_itemInSlot);
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        InventoryItemInfo.Instance.ClearInfo();
     }
 }
