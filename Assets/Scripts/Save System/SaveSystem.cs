@@ -23,6 +23,9 @@ public class InventorySaveData
     public int Arrows;
     public int Keys;
 
+    public int EquippedWeaponId;
+    public int EquippedUtilityId;
+
     public InventorySaveData()
     {
         var inv = Inventory.Instance;
@@ -34,6 +37,9 @@ public class InventorySaveData
 
         Arrows = inv.Arrows;
         Keys = inv.Keys;
+
+        EquippedWeaponId = inv.EquippedWeapon.ItemId;
+        EquippedUtilityId = inv.EquippedUtility.ItemId;
     }
 }
 

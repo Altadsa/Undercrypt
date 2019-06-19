@@ -25,29 +25,11 @@ public class Inventory : MonoBehaviour
     private void Awake()
     {
         if (!Instance) Instance = this;
-        var saveGame = SaveSystem.LoadSave();
-        if (saveGame != null)
-        {
-            var allItems = Resources.FindObjectsOfTypeAll<EquippableItemData>();
-            foreach (var itemId in saveGame.ItemIds)
-            {
-                var savedItem = allItems.FirstOrDefault(i => i.ItemId == itemId);
-                AddEquippable(savedItem);
-            }
-
-            Keys = saveGame.Keys;
-            Arrows = saveGame.Arrows;
-        }
     }
 
     private void Start()
     {
         UpdateEquipment?.Invoke();
-    }
-
-    private void OnDestroy()
-    {
-        SaveSystem.SaveGame(new InventorySaveData());
     }
 
     public void EquipItem(int id)
