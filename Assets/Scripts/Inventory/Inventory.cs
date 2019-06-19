@@ -14,7 +14,8 @@ public class Inventory : MonoBehaviour
     public List<IEquippableItem> EquippableItems { get; private set; } = new List<IEquippableItem>();
     public List<IConsumableItem> ConsumableItems { get; private set; } = new List<IConsumableItem>();
 
-    public IEquippableItem EquippedItem = null;
+    public IEquippableItem EquippedWeapon = null;
+    public IEquippableItem EquippedUtility = null;
 
     public event Action UpdateEquipment;
     public event Action UpdateConsumable; 
@@ -27,10 +28,34 @@ public class Inventory : MonoBehaviour
 
     public void EquipItem(int id)
     {
-        EquippedItem?.ItemPrefab.SetActive(false);
-        EquippedItem = EquippableItems.Find(i => i.ItemId == id);
-        EquippedItem.ItemPrefab.SetActive(true);
+        var itemToEquip = EquippableItems.Find(i => i.ItemId == id);
+        switch (itemToEquip.EquipmentType)
+        {
+            case EquipmentType.MeleeWeapon:
+                EquipWeapon(itemToEquip);
+                break;
+            case EquipmentType.UtilityItem:
+                EquipUtility(itemToEquip);
+                break;
+        }
+        Debug.Log($"Equipped Weapon {EquippedWeapon?.Name}...Equipped Utility {EquippedUtility?.Name}");
         UpdateEquipment?.Invoke();
+    }
+
+    private void EquipUtility(IEquippableItem itemToEquip)
+    {
+        EquippedWeapon?.ItemPrefab.SetActive(false);
+        EquippedUtility?.ItemPrefab.SetActive(false);
+        EquippedUtility = itemToEquip;
+        EquippedUtility.ItemPrefab.SetActive(true);
+    }
+
+    private void EquipWeapon(IEquippableItem itemToEquip)
+    {
+        EquippedUtility?.ItemPrefab.SetActive(false);
+        EquippedWeapon?.ItemPrefab.SetActive(false);
+        EquippedWeapon = itemToEquip;
+        EquippedWeapon.ItemPrefab.SetActive(true);
     }
 
     public void AddEquippable(EquippableItemData data)

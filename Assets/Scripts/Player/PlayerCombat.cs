@@ -16,6 +16,7 @@ public class PlayerCombat
     {
         if (Input.GetMouseButtonDown(0))
         {
+            Inventory.Instance.EquipItem(Inventory.Instance.EquippedWeapon.ItemId);
             _playerSword = _swordParent.GetComponentInChildren<PlayerSword>();
             _animator.SetTrigger("Attack");
             _playerSword.Attack();

@@ -9,6 +9,7 @@ public class EquippableItem : IEquippableItem
     public string Name { get; set;}
     public string Description { get; set; }
     public GameObject ItemPrefab { get; set;}
+    public EquipmentType EquipmentType { get; set; }
 
     public EquippableItem(EquippableItemData data, Transform equipTransform)
     {
@@ -19,5 +20,6 @@ public class EquippableItem : IEquippableItem
         Description = data.Description;
         ItemPrefab = Object.Instantiate(data.ItemPrefab, EquipTransform);
         ItemPrefab.SetActive(false);
+        EquipmentType = data.EquipmentType;
     }
 }

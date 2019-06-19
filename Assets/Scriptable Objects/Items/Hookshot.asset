@@ -16,4 +16,6 @@ MonoBehaviour:
   _icon: {fileID: 21300000, guid: 499f7464d1b4fd44e994843e2204aa5c, type: 3}
   _name: Hookshot
   _description: A handy tool for reaching difficult places.
-  _itemPrefab: {fileID: 0}
+  _itemPrefab: {fileID: 456999759655204646, guid: fd4b278c482434c49acfa1f4585a5f98,
+    type: 3}
+  _equipmentType: 1

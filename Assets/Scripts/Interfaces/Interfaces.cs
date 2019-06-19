@@ -30,7 +30,15 @@ public interface IItem
 public interface IEquippableItem : IItem
 {
     GameObject ItemPrefab { get; }
+    EquipmentType EquipmentType { get; }
 }
+
+public enum EquipmentType
+{
+    MeleeWeapon,
+    UtilityItem
+}
+
 
 public interface IConsumableItem : IItem
 {
