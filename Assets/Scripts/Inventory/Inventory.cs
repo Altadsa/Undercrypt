@@ -10,7 +10,7 @@ public class Inventory : MonoBehaviour
     public Transform EquipmentParent;
 
     public int Arrows { get; private set; } = 10;
-    public int Keys { get; private set; } = 0;
+    public int Keys { get; private set; } = 1;
 
     public List<IEquippableItem> EquippableItems { get; private set; } = new List<IEquippableItem>();
     public List<IConsumableItem> ConsumableItems { get; private set; } = new List<IConsumableItem>();
@@ -30,6 +30,7 @@ public class Inventory : MonoBehaviour
     private void Start()
     {
         UpdateEquipment?.Invoke();
+        UpdateConsumable?.Invoke();
     }
 
     public void EquipItem(int id)
@@ -79,6 +80,12 @@ public class Inventory : MonoBehaviour
     public void ChangeArrowCount(int change)
     {
         Arrows += change;
+        UpdateConsumable?.Invoke();
+    }
+
+    public void ChangeKeyCount(int change)
+    {
+        Keys += change;
         UpdateConsumable?.Invoke();
     }
 

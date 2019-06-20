@@ -16,7 +16,7 @@ public class InventoryStats : MonoBehaviour
 
     private Inventory _inventory;
 
-    private void Start()
+    private void Awake()
     {
         FindObjectOfType<PlayerHealth>().OnHealthChanged += UpdateHealth;
         _inventory = Inventory.Instance;

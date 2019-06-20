@@ -1,10 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using GEV;
 using UnityEngine;
 
 public class ItemPickup : MonoBehaviour
 {
     [SerializeField] EquippableItemData _data;
+    [SerializeField] ScriptableEvent _onItemObtained;
+
+    public void Obtain()
+    {
+        Inventory.Instance.AddEquippable(_data);
+    }
 
     private void OnTriggerEnter(Collider other)
     {

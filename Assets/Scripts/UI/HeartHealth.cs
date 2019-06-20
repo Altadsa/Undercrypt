@@ -30,6 +30,9 @@ public class HeartHealth : MonoBehaviour
     private void UpdateHealth(int current, int max)
     {
         _noOHearts = max / HP_PER_HEART;
+        var diff = max - current;
+        var emptyHearts = diff / HP_PER_HEART;
+        var heartFraction = diff % HP_PER_HEART;
 
         if (_heartImages.Length < _noOHearts)
         {
@@ -41,35 +44,17 @@ public class HeartHealth : MonoBehaviour
             _heartImages = GetComponentsInChildren<Image>();
         }
 
-        int diff = max - current;
-        var div = diff / HP_PER_HEART;
-        var remain = diff % HP_PER_HEART;
-
-
-        var fullHearts = _noOHearts - (div + 1);
+        var fullHearts = _noOHearts - (emptyHearts + 1);
 
         for (int i = 0; i < _noOHearts; i++)
         {
             if (i < fullHearts)
                 _heartImages[i].sprite = _heartSprites[4];
             if (i == fullHearts)
-                _heartImages[i].sprite = _heartSprites[HP_PER_HEART - remain];
+                _heartImages[i].sprite = _heartSprites[HP_PER_HEART - heartFraction];
             if (i > fullHearts)
                 _heartImages[i].sprite = _heartSprites[0];
         }
-
-        //for (int i = 0; i < fullHearts; i++)
-        //{
-        //    ;
-        //}
-        //_heartImages[fullHearts].sprite = _heartSprites[HP_PER_HEART - remain];
-        //for (int i = _heartImages.Length - 1; i > _heartImages.Length - (1 + div); i--)
-        //{
-
-        //}
-
-        Debug.Log(div);
-        Debug.Log(remain);
     }
 
 }

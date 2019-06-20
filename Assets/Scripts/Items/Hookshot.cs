@@ -22,7 +22,7 @@ public class Hookshot : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetKeyDown(KeyCode.Keypad1))
         {
              ext = _mainCamera.transform.forward * _chainLength;
              _hook.transform.position = _mainCamera.transform.position;
