@@ -12,8 +12,8 @@ public class PlayerHealth : MonoBehaviour, IHealth
 
     private void Start()
     {
-        _maxHealth = 40;
-        _currentHealth = 30;
+        _maxHealth = 80;
+        _currentHealth = 80;
         OnHealthChanged?.Invoke(_currentHealth,_maxHealth);
         _timeSinceDamaged = _damageCd;
     }
