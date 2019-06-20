@@ -9,15 +9,17 @@ public class ItemPickup : MonoBehaviour
     public void Obtain()
     {
         Inventory.Instance.AddEquippable(_data);
+        _onItemObtained.Raise();
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        var player = other.GetComponent<PlayerController>();
-        if (player)
-        {
-            Inventory.Instance.AddEquippable(_data);
-            gameObject.SetActive(false);
-        }
-    }
+
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    var player = other.GetComponent<PlayerController>();
+    //    if (player)
+    //    {
+    //        Inventory.Instance.AddEquippable(_data);
+    //        gameObject.SetActive(false);
+    //    }
+    //}
 }

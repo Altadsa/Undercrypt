@@ -46,21 +46,4 @@ public class DungeonDoor : MonoBehaviour
 
     }
 
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    var player = other.GetComponent<PlayerController>();
-    //    if (player)
-    //    {
-
-    //    }
-    //}
-
-    //private void OnTriggerExit(Collider other)
-    //{
-    //    var player = other.GetComponent<PlayerController>();
-    //    if (player)
-    //    {
-    //        _animator.SetTrigger("Close");
-    //    }
-    //}
 }

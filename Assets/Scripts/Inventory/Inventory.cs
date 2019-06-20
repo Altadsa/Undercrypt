@@ -9,6 +9,8 @@ public class Inventory : MonoBehaviour
 
     public Transform EquipmentParent;
 
+    public List<EquippableItemData> StartEquipment;
+
     public int Arrows { get; private set; } = 10;
     public int Keys { get; private set; } = 1;
 
@@ -19,12 +21,15 @@ public class Inventory : MonoBehaviour
     public IEquippableItem EquippedUtility = null;
 
     public event Action UpdateEquipment;
-    public event Action UpdateConsumable; 
-
+    public event Action UpdateConsumable;
 
     private void Awake()
     {
         if (!Instance) Instance = this;
+        if (StartEquipment.Count > 0)
+        {
+            StartEquipment.ForEach(AddEquippable);
+        }
     }
 
     private void Start()

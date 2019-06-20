@@ -29,7 +29,7 @@ public class PlayerSword : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         Debug.Log(collision.gameObject);
-        var enemyHealth = collision.gameObject.GetComponent<EnemyHealth>();
+        var enemyHealth = collision.gameObject.GetComponentInParent<EnemyHealth>();
         if (enemyHealth)
         {
             _audioSrc.Play();

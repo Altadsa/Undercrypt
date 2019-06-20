@@ -27,7 +27,7 @@ public class CameraZoom
 
     public void Update(ITargetable target)
     {
-        _camera.localPosition = Zoom(target);
+        _camera.localPosition = target == null ? _origin : Zoom(target);
     }
 
     private Vector3 Zoom(ITargetable targetable)

@@ -17,7 +17,7 @@ public class InventoryUI : MonoBehaviour
 
     Inventory _inventory;
 
-    private void Start()
+    private void Awake()
     {
         if (!Instance) Instance = this;
         _inventory = Inventory.Instance;

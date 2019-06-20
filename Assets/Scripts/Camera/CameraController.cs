@@ -45,7 +45,6 @@ public class CameraController : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            Debug.Log(_lockOnTarget);
             if (_potentialTargets.Count > 0)
                 _lockOnTarget = ClosestTarget;
         }
@@ -58,9 +57,9 @@ public class CameraController : MonoBehaviour
     private void LateUpdate()
     {
         _cameraRotator.Update();
+        _cameraZoom.Update(_lockOnTarget);
         if (_lockOnTarget != null)
         {
-            _cameraZoom.Update(_lockOnTarget);
             _playerTransform.forward = Vector3.Scale((_lockOnTarget.Transform.position - _playerTransform.position).normalized, new Vector3(1,0,1));
             if (transform.forward.y < 0)
                 _cameraTargeting.Update(_lockOnTarget);
@@ -120,7 +119,3 @@ public class CameraController : MonoBehaviour
 
 }
 
-public interface ITargetable
-{
-    Transform Transform { get; }
-}

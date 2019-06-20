@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public abstract class Enemy : MonoBehaviour
+public abstract class Enemy : MonoBehaviour, ITargetable
 {
+    public Transform Transform => transform;
+
     public Transform Player { get; private set; }
     public Vector3 PlayerLastLocation { get; private set; }
     public EnemyVision Vision { get; private set; }
@@ -30,4 +32,6 @@ public abstract class Enemy : MonoBehaviour
     {
         StateMachine.UpdateStateMachine();
     }
+
+
 }

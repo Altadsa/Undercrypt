@@ -19,6 +19,10 @@ public interface IHealth
     void UpdateHealth(int changeInHealth);
 }
 
+public interface ITargetable
+{
+    Transform Transform { get; }
+}
 public interface IItem
 {
     int ItemId { get; }

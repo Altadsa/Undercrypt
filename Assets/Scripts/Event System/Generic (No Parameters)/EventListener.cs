@@ -3,7 +3,7 @@
 namespace GEV
 {
     [System.Serializable]
-    public class EventListener
+    public class EventListener : IEventListener
     {
 
         public ScriptableEvent _Event;

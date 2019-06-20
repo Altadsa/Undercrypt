@@ -1,9 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour, IHealth
 {
     public float HealthRemaining => (float) _currentHealth /  _maxHeath;
+
+    public event Action<EnemyHealth> OnEnemyDeath;  
 
     [SerializeField] private int _maxHeath = 1;
     [SerializeField] private AudioSource _damageAudio;
@@ -27,6 +30,7 @@ public class EnemyHealth : MonoBehaviour, IHealth
         _currentHealth = ChangeHealth(changeInHealth);
         if (_currentHealth <= 0)
         {
+            OnEnemyDeath?.Invoke(this);
             _animator.SetTrigger("Die");
             _enemy.enabled = false;
             Destroy(gameObject, 5);
@@ -49,8 +53,5 @@ public class EnemyHealth : MonoBehaviour, IHealth
         _mesh.material.color = _normalColor;
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-
-    }
+    
 }

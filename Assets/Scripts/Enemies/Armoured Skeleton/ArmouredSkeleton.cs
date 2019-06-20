@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class ArmouredSkeleton : Enemy, ITargetable
+public class ArmouredSkeleton : Enemy
 {
     [SerializeField] private AudioSource _audioSrc;
     new void Awake()
@@ -24,6 +24,4 @@ public class ArmouredSkeleton : Enemy, ITargetable
         if (_audioSrc.isPlaying)
             _audioSrc.Stop();
     }
-
-    public Transform Transform => transform;
 }
