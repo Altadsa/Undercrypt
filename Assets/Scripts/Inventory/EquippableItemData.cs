@@ -4,7 +4,9 @@
 public class EquippableItemData : ItemData, IEquippableItem
 {
     [SerializeField] GameObject _itemPrefab;
-    [SerializeField] private EquipmentType _equipmentType;
+    [SerializeField] EquipmentType _equipmentType;
+    [SerializeField] Dialogue _itemObtaineDialogue;
     public GameObject ItemPrefab => _itemPrefab;
     public EquipmentType EquipmentType => _equipmentType;
+    public Dialogue ItemObtainedText => _itemObtaineDialogue;
 }

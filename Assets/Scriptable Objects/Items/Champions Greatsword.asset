@@ -18,3 +18,6 @@ MonoBehaviour:
   _description: This legendary blade was supposed wielded by the Hero of Dunnmar
   _itemPrefab: {fileID: 5968785977157308670, guid: 0fef5010a14e10e448175fd7cc516f96,
     type: 3}
+  _equipmentType: 0
+  _itemObtaineDialogue: {fileID: 11400000, guid: e17fa13b31aa2e7488ce652d2c22db1f,
+    type: 2}

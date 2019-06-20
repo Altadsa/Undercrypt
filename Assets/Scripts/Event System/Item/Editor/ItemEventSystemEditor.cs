@@ -89,16 +89,9 @@ public class ItemEventSystemEditor : Editor
                 foldouts[i] = EditorGUILayout.Foldout(
                     foldouts[i], foldoutLabel, true);
 
-                if (i == 0)
+                if (i != 0 && GUILayout.Button("↑", GUILayout.Width(20)))
                 {
-                    GUILayout.Space(20);
-                }
-                else
-                {
-                    if (GUILayout.Button("↑", GUILayout.Width(20)))
-                    {
-                        sListeners.MoveArrayElement(i, i - 1);
-                    }
+                    sListeners.MoveArrayElement(i, i - 1);
                 }
                 if (i == sListeners.arraySize - 1)
                 {
@@ -133,6 +126,7 @@ public class ItemEventSystemEditor : Editor
             }
         }
 
+        serializedObject.ApplyModifiedProperties();
     }
 
     void DrawEventCreationForm()
