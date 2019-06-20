@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace GEV
 {
-    [CreateAssetMenu(menuName = "GEV/Scriptable Event")]
+    [CreateAssetMenu(menuName = "GEV/Scriptable ItemEvent")]
     public class ScriptableEvent : ScriptableObject
     {
         List<EventListener> eventListeners = new List<EventListener>();

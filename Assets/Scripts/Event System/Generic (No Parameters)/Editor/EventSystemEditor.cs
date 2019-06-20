@@ -32,7 +32,7 @@ namespace GEV
         void DrawEventAssignment()
         {
             GUILayout.BeginVertical();
-            GUILayout.Label("Add Event");
+            GUILayout.Label("Add ItemEvent");
             assignedEvent = (ScriptableEvent)EditorGUILayout.ObjectField(
                 assignedEvent, typeof(ScriptableEvent), false);
             if (GUILayout.Button("Add", GUILayout.Width(50)))

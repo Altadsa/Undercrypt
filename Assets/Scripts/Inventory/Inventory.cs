@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class Inventory : MonoBehaviour
+public class Inventory : SingletonMonoBehaviour<Inventory>
 {
-    public static Inventory Instance { get; private set; }
-
     public Transform EquipmentParent;
 
     public List<EquippableItemData> StartEquipment;
@@ -25,7 +23,6 @@ public class Inventory : MonoBehaviour
 
     private void Awake()
     {
-        if (!Instance) Instance = this;
         if (StartEquipment.Count > 0)
         {
             StartEquipment.ForEach(AddEquippable);

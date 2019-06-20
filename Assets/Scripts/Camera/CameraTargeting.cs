@@ -18,8 +18,8 @@ public class CameraTargeting
         _player = player;
         _controller = controller;
         _mainCamera = Camera.main;
-        Debug.Log($"Screen Width {Screen.width} Screen Height {Screen.height}");
-        Debug.Log(Targetzone);
+        //Debug.Log($"Screen Width {Screen.width} Screen Height {Screen.height}");
+        //Debug.Log(Targetzone);
     }
 
     public void Update(ITargetable target)
