@@ -1,5 +1,7 @@
-﻿using System.Security.Cryptography;
+﻿
+using GEV;
 using UnityEngine;
+using UnityEngine.Playables;
 
 
 public class DungeonDoor : MonoBehaviour
@@ -8,14 +10,24 @@ public class DungeonDoor : MonoBehaviour
     [SerializeField] DungeonRoom _roomA;
     [SerializeField] DungeonRoom _roomB;
 
+    [SerializeField] private ScriptableEvent _onDoorOpened;
+    [SerializeField] private ScriptableEvent _onDoorClosed;
+
     private IDoorCondition _doorCondition;
 
     private void Awake()
     {
         _doorCondition = GetComponent<IDoorCondition>();
     }
-
-    public void ToggleActiveRoom()
+    public void OnDoorOpened()
+    {
+        _onDoorOpened.Raise();
+    }
+    public void OnDoorClosed()
+    {
+        _onDoorClosed.Raise();
+    }
+    private void ToggleActiveRoom()
     {
         _roomA.ToggleRoom();
         _roomB.ToggleRoom();
@@ -31,7 +43,7 @@ public class DungeonDoor : MonoBehaviour
                 {
                     Destroy(_doorCondition.DoorCondition);
                     _animator.SetTrigger("Open");
-                    ToggleActiveRoom();
+                    //ToggleActiveRoom();
                 }
                 else
                 {
@@ -40,7 +52,8 @@ public class DungeonDoor : MonoBehaviour
             }
             else
             {
-                ToggleActiveRoom();
+                _animator.SetTrigger("Open");
+                //ToggleActiveRoom();
             }
         }
 
