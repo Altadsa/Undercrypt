@@ -1,27 +1,23 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Cinemachine;
-using UnityEngine;
-using UnityEngine.Playables;
-using UnityEngine.Timeline;
+﻿using UnityEngine;
 
 public class DummyChest : MonoBehaviour
 {
-    [SerializeField] private CinemachineFreeLook _characterCamera;
-    [SerializeField] private CinemachineVirtualCamera _cutsceneCamera;
+    [SerializeField] private EquippableItemData _itemData;
+    [SerializeField] private ItemEvent _onItemObtained;
+    [SerializeField] private Animator _chestAnimator;
 
-    [SerializeField] private PlayableAsset _cutscene;
-    [SerializeField] private PlayableDirector _director;
+    public void OnItemObtained()
+    {
+        _onItemObtained.Raise(_itemData);
+    }
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Triggered");
         var player = other.GetComponent<PlayerController>();
         if (player)
         {
-            //_cutsceneCamera.Follow = transform;
-            _director.Play(_cutscene);
-            Debug.Log("Play Open Chest cutscene");
-
+            _chestAnimator.SetTrigger("Open");
         }
     }
 
