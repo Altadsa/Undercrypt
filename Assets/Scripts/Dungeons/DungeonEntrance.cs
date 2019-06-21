@@ -1,17 +1,17 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using GEV;
 using UnityEngine;
 
 public class DungeonEntrance : MonoBehaviour
 {
-    [SerializeField] private LevelManager _levelManager;
+    [SerializeField] private ScriptableEvent _onDungeonEntered;
 
     private void OnTriggerEnter(Collider other)
     {
         var player = other.GetComponent<PlayerController>();
         if (player)
         {
-            _levelManager.LoadLevel("The Undercrypt");
+            Debug.Log("Entering Dungeon");
+            _onDungeonEntered.Raise();
         }
     }
 }

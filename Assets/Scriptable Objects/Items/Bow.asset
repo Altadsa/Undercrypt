@@ -19,3 +19,5 @@ MonoBehaviour:
   _itemPrefab: {fileID: 3117214475231213817, guid: 1498835f4547bc448a053ff03464fd5c,
     type: 3}
   _equipmentType: 1
+  _itemObtaineDialogue: {fileID: 11400000, guid: 52af61c2c30123f48b5c441161b5dc26,
+    type: 2}

@@ -2071,7 +2071,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _data: {fileID: 11400000, guid: 0680c24a849ce5e44950524262097092, type: 2}
-  _onItemObtained: {fileID: 0}
+  _onItemObtained: {fileID: 11400000, guid: aa2f63538b4d537499cf0894b388b770, type: 2}
 --- !u!135 &1904784398
 SphereCollider:
   m_ObjectHideFlags: 0
