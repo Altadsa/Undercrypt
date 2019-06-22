@@ -6,15 +6,13 @@ using UnityEngine;
 [RequireComponent(typeof(DungeonDoor))]
 public class BattleDoorCondition : MonoBehaviour, IDoorCondition
 {
-    [SerializeField] private Transform _roomAssets;
-
     private List<EnemyHealth> _enemies;
 
     public Component DoorCondition => this;
 
-    private void Awake()
+    public void Initialize(List<EnemyHealth> enemies)
     {
-        _enemies = _roomAssets.GetComponentsInChildren<EnemyHealth>().ToList();
+        _enemies = enemies;
         _enemies.ForEach(e => e.OnEnemyDeath += OnEnemyDead);
     }
 

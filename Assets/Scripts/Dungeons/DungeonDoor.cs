@@ -7,8 +7,8 @@ using UnityEngine.Playables;
 public class DungeonDoor : MonoBehaviour
 {
     [SerializeField] private Animator _animator;
-    [SerializeField] DungeonRoom _roomA;
-    [SerializeField] DungeonRoom _roomB;
+    [SerializeField] GameObject _roomA;
+    [SerializeField] GameObject _roomB;
 
     [SerializeField] private ScriptableEvent _onDoorOpened;
     [SerializeField] private ScriptableEvent _onDoorClosed;
@@ -29,21 +29,21 @@ public class DungeonDoor : MonoBehaviour
     }
     private void ToggleActiveRoom()
     {
-        _roomA.ToggleRoom();
-        _roomB.ToggleRoom();
+        _roomA.SetActive(!_roomA.activeInHierarchy);
+        _roomB.SetActive(!_roomB.activeInHierarchy);
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.O))
         {
-            if (_doorCondition != null)
+            if (GetComponent<IDoorCondition>() != null)
             {
                 if (_doorCondition.ConditionsMet())
                 {
                     Destroy(_doorCondition.DoorCondition);
                     _animator.SetTrigger("Open");
-                    //ToggleActiveRoom();
+                    ToggleActiveRoom();
                 }
                 else
                 {
@@ -53,7 +53,7 @@ public class DungeonDoor : MonoBehaviour
             else
             {
                 _animator.SetTrigger("Open");
-                //ToggleActiveRoom();
+                ToggleActiveRoom();
             }
         }
 

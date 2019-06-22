@@ -9,7 +9,7 @@ public class DungeonRoom : MonoBehaviour
 
     private void Awake()
     {
-        _roomAssets.SetActive(Enabled);
+        //_roomAssets.SetActive(Enabled);
     }
 
     public void ToggleRoom()

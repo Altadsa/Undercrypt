@@ -1,12 +1,18 @@
-﻿using GEV;
+﻿using System.Collections;
+using System.Linq;
+using GEV;
 using UnityEngine;
 
-public class DummyChest : MonoBehaviour
+public class TreasureChest : MonoBehaviour
 {
     [SerializeField] private EquippableItemData _itemData;
     [SerializeField] private ScriptableEvent _onChestOpened;
     [SerializeField] private ItemEvent _onItemObtained;
     [SerializeField] private Animator _chestAnimator;
+
+    private void Awake()
+    {
+    }
 
     public void OnItemObtained()
     {
