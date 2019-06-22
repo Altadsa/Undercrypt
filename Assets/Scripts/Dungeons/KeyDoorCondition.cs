@@ -1,12 +1,10 @@
 ﻿using UnityEngine;
 
 [RequireComponent(typeof(DungeonDoor))]
-public class KeyDoorCondition : MonoBehaviour, IDoorCondition
+public class KeyDoorCondition : DoorOpenCondition
 {
-
-    public Component DoorCondition => this;
-
-    public bool ConditionsMet()
+    
+    public override bool ConditionsMet()
     {
         var inventory = Inventory.Instance;
         if (inventory.Keys > 0)
@@ -18,7 +16,7 @@ public class KeyDoorCondition : MonoBehaviour, IDoorCondition
         return false;
     }
 
-    public void ConditionMessage()
+    public override void ConditionMessage()
     {
         Debug.Log("You need a Key to open this door.");
     }

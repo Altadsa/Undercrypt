@@ -864,6 +864,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 686557524}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &734554453 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5931198647398468629, guid: d9468db2a27b4324791f0a574e599490,
+    type: 3}
+  m_PrefabInstance: {fileID: 854334303}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &765410510
 GameObject:
   m_ObjectHideFlags: 0
@@ -1016,7 +1022,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _battleChest: {fileID: 1149234557}
-  _doorToLock: {fileID: 1610676568}
+  _doorToLock: {fileID: 734554453}
 --- !u!1 &839744756
 GameObject:
   m_ObjectHideFlags: 0
@@ -2831,12 +2837,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &1610676568 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2408920749211693518, guid: d9468db2a27b4324791f0a574e599490,
-    type: 3}
-  m_PrefabInstance: {fileID: 854334303}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1621679336
 GameObject:
   m_ObjectHideFlags: 0

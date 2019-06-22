@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-[RequireComponent(typeof(DungeonDoor))]
-public class BattleDoorCondition : MonoBehaviour, IDoorCondition
+
+public class BattleDoorCondition : DoorOpenCondition
 {
     private List<EnemyHealth> _enemies;
-
-    public Component DoorCondition => this;
 
     public void Initialize(List<EnemyHealth> enemies)
     {
@@ -25,20 +23,13 @@ public class BattleDoorCondition : MonoBehaviour, IDoorCondition
         }
     }
 
-    public bool ConditionsMet()
+    public override bool ConditionsMet()
     {
         return _enemies.Count == 0;
     }
 
-    public void ConditionMessage()
+    public override void ConditionMessage()
     {
         Debug.Log("You need to defeat all enemies in the room.");
     }
-}
-
-public interface IDoorCondition
-{
-    bool ConditionsMet();
-    void ConditionMessage();
-    Component DoorCondition { get; }
 }

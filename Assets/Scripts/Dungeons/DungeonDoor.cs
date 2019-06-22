@@ -1,8 +1,5 @@
-﻿
-using GEV;
+﻿using GEV;
 using UnityEngine;
-using UnityEngine.Playables;
-
 
 public class DungeonDoor : MonoBehaviour
 {
@@ -13,12 +10,8 @@ public class DungeonDoor : MonoBehaviour
     [SerializeField] private ScriptableEvent _onDoorOpened;
     [SerializeField] private ScriptableEvent _onDoorClosed;
 
-    private IDoorCondition _doorCondition;
+    private DoorOpenCondition _doorCondition;
 
-    private void Awake()
-    {
-        _doorCondition = GetComponent<IDoorCondition>();
-    }
     public void OnDoorOpened()
     {
         _onDoorOpened.Raise();
@@ -27,6 +20,7 @@ public class DungeonDoor : MonoBehaviour
     {
         _onDoorClosed.Raise();
     }
+
     private void ToggleActiveRoom()
     {
         _roomA.SetActive(!_roomA.activeInHierarchy);
@@ -37,11 +31,12 @@ public class DungeonDoor : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.O))
         {
-            if (GetComponent<IDoorCondition>() != null)
+            if (GetComponent<DoorOpenCondition>())
             {
+                _doorCondition = GetComponent<DoorOpenCondition>();
                 if (_doorCondition.ConditionsMet())
                 {
-                    Destroy(_doorCondition.DoorCondition);
+                    Destroy(_doorCondition);
                     _animator.SetTrigger("Open");
                     ToggleActiveRoom();
                 }
