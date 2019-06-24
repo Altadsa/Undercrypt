@@ -18,3 +18,5 @@ MonoBehaviour:
   _description: Your companion through many journeys.
   _itemPrefab: {fileID: 3951964673085730802, guid: 304b47854cefaf5419de1e66f7214249,
     type: 3}
+  _equipmentType: 0
+  _itemObtaineDialogue: {fileID: 0}

@@ -12,6 +12,7 @@ public class InventoryUI : MonoBehaviour
     [SerializeField] Transform _WeaponSlots;
     [SerializeField] Transform _UtilitySlots;
     [SerializeField] Transform _ConsumableSlots;
+    [SerializeField] Transform _QuestSlots;
 
     public static InventoryUI Instance;
 
@@ -22,6 +23,7 @@ public class InventoryUI : MonoBehaviour
         if (!Instance) Instance = this;
         _inventory = Inventory.Instance;
         _inventory.UpdateEquipment += UpdateEquipment;
+        _inventory.UpdateQuestItems += UpdateEquipment;
     }
 
     private void Update()
@@ -33,8 +35,10 @@ public class InventoryUI : MonoBehaviour
     {
         var weapons = _inventory.EquippableItems.Where(i => i.EquipmentType == EquipmentType.MeleeWeapon).ToArray();
         var utilities = _inventory.EquippableItems.Where(i => i.EquipmentType == EquipmentType.UtilityItem).ToArray();
+        var questItems = _inventory.QuestItems.ToArray();
         UpdateSlots(weapons, _WeaponSlots);
         UpdateSlots(utilities, _UtilitySlots);
+        UpdateSlots(questItems, _QuestSlots);
     }
 
     private void UpdateSlots(IItem[] items, Transform slotParent)

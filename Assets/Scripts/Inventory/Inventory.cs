@@ -9,10 +9,14 @@ public class Inventory : SingletonMonoBehaviour<Inventory>
 
     public List<EquippableItemData> StartEquipment;
 
+    public List<QuestItemData> StartQuestItems;
+
     public int Arrows { get; private set; } = 10;
     public int Keys { get; private set; } = 1;
 
     public List<IEquippableItem> EquippableItems { get; private set; } = new List<IEquippableItem>();
+
+    public List<IItem> QuestItems { get; private set; } = new List<IItem>();
     public List<IConsumableItem> ConsumableItems { get; private set; } = new List<IConsumableItem>();
 
     public IEquippableItem EquippedWeapon = null;
@@ -20,6 +24,7 @@ public class Inventory : SingletonMonoBehaviour<Inventory>
 
     public event Action UpdateEquipment;
     public event Action UpdateConsumable;
+    public event Action UpdateQuestItems;
 
     private void Awake()
     {
@@ -27,17 +32,29 @@ public class Inventory : SingletonMonoBehaviour<Inventory>
         {
             StartEquipment.ForEach(AddEquippable);
         }
+
+        if (StartQuestItems.Count > 0)
+        {
+            StartQuestItems.ForEach(AddQuestItem);
+        }
     }
 
     private void Start()
     {
         UpdateEquipment?.Invoke();
         UpdateConsumable?.Invoke();
+        UpdateQuestItems?.Invoke();
     }
 
     public void EquipItem(int id)
     {
         var itemToEquip = EquippableItems.Find(i => i.ItemId == id);
+        if (itemToEquip == null)
+        {
+            Debug.LogWarning($"No such item exists.");
+            return;
+        }
+
         switch (itemToEquip.EquipmentType)
         {
             case EquipmentType.MeleeWeapon:
@@ -79,6 +96,18 @@ public class Inventory : SingletonMonoBehaviour<Inventory>
             Debug.Log($"Adventurer already has {data.Name}");
     }
 
+    public void AddQuestItem(QuestItemData itemData)
+    {
+        QuestItems.Add(new QuestItem(itemData));
+        UpdateQuestItems?.Invoke();
+    }
+
+    public void RemoveQuestItem(int itemId)
+    {
+        var itemToRemove = QuestItems.Find(i => i.ItemId == itemId);
+        QuestItems.Remove(itemToRemove);
+    }
+
     public void ChangeArrowCount(int change)
     {
         Arrows += change;
@@ -91,6 +120,22 @@ public class Inventory : SingletonMonoBehaviour<Inventory>
         UpdateConsumable?.Invoke();
     }
 
+}
+
+public class QuestItem : IItem
+{
+    public int ItemId { get; private set;}
+    public Sprite Icon { get; private set; }
+    public string Name { get; private set; }
+    public string Description { get; private set; }
+
+    public QuestItem(QuestItemData data)
+    {
+        ItemId = data.ItemId;
+        Icon = data.Icon;
+        Name = data.Name;
+        Description = data.Description;
+    }
 }
 
 

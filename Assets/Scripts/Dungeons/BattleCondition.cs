@@ -4,7 +4,7 @@ using System.Linq;
 using UnityEngine;
 
 
-public class BattleDoorCondition : DoorOpenCondition
+public class BattleCondition : OpenCondition
 {
     private List<EnemyHealth> _enemies;
 

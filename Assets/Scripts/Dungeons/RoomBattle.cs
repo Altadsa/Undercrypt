@@ -16,10 +16,10 @@ public class RoomBattle : MonoBehaviour
     private void OnEnable()
     {
         _dungeonRoom = GetComponent<DungeonRoom>();
-        _doorToLock.AddComponent<BattleDoorCondition>();
+        _doorToLock.AddComponent<BattleCondition>();
         _enemies = _dungeonRoom.GetComponentsInChildren<EnemyHealth>().ToList();
         _enemies.ForEach(e => e.OnEnemyDeath += OnEnemyDeath);
-        _doorToLock.GetComponent<BattleDoorCondition>().Initialize(_enemies);
+        _doorToLock.GetComponent<BattleCondition>().Initialize(_enemies);
     }
 
     private void OnEnemyDeath(EnemyHealth enemy)

@@ -10,7 +10,7 @@ public class DungeonDoor : MonoBehaviour
     [SerializeField] private ScriptableEvent _onDoorOpened;
     [SerializeField] private ScriptableEvent _onDoorClosed;
 
-    private DoorOpenCondition _doorCondition;
+    private OpenCondition _condition;
 
     public void OnDoorOpened()
     {
@@ -31,18 +31,18 @@ public class DungeonDoor : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.O))
         {
-            if (GetComponent<DoorOpenCondition>())
+            if (GetComponent<OpenCondition>())
             {
-                _doorCondition = GetComponent<DoorOpenCondition>();
-                if (_doorCondition.ConditionsMet())
+                _condition = GetComponent<OpenCondition>();
+                if (_condition.ConditionsMet())
                 {
-                    Destroy(_doorCondition);
+                    Destroy(_condition);
                     _animator.SetTrigger("Open");
                     ToggleActiveRoom();
                 }
                 else
                 {
-                    _doorCondition.ConditionMessage();
+                    _condition.ConditionMessage();
                 }
             }
             else

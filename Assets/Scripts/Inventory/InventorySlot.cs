@@ -16,6 +16,7 @@ public class InventorySlot : MonoBehaviour, IPointerDownHandler, IPointerEnterHa
     public void OnPointerDown(PointerEventData eventData)
     {
         Debug.Log("Select");
+
         _inventoryUi.SelectItem(_itemInSlot.ItemId);
     }
 

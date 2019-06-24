@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 [RequireComponent(typeof(DungeonDoor))]
-public class KeyDoorCondition : DoorOpenCondition
+public class KeyCondition : OpenCondition
 {
     
     public override bool ConditionsMet()
