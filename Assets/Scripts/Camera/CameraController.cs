@@ -42,17 +42,27 @@ public class CameraController : MonoBehaviour
 
     private void Target()
     {
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            if (_potentialTargets.Count > 0)
-                _lockOnTarget = ClosestTarget;
+            if (_lockOnTarget == null)
+            {
+                if (_potentialTargets.Count > 0)
+                    _lockOnTarget = ClosestTarget;
+            }
+            else
+            {
+                _lockOnTarget = null;
+            }
         }
-        else
+
+        if (Input.GetKeyDown(KeyCode.LeftControl))
         {
-            _lockOnTarget = null;
+            _faceForward = true;
         }
+
     }
 
+    private bool _faceForward = false;
     private void LateUpdate()
     {
         _cameraRotator.Update();
@@ -74,7 +84,15 @@ public class CameraController : MonoBehaviour
             }
             else
                 transform.position = Origin;
+
+            if (false)
+            {
+                var angle = Vector3.Angle(transform.forward, _playerTransform.forward);
+                transform.forward = Vector3.Lerp(transform.forward, _playerTransform.forward, angle * Time.deltaTime);
+                _faceForward = false;
+            }
         }
+
     }
 
     private void OnTriggerEnter(Collider other)

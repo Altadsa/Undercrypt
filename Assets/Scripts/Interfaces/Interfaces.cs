@@ -48,3 +48,4 @@ public interface IConsumableItem : IItem
 {
     int Quantity { get; }
 }
+

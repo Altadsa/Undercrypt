@@ -10,6 +10,7 @@ public class CameraCollision
     readonly Int32 _playerLayerMask = ~(1 << LayerMask.NameToLayer("Characters"));
 
     private Vector3 _defaultPosition => _controller.position - (_camera.forward * 4);
+    
     Vector3 _cameraMax => _controller.position + _camera.forward * -CAMERA_DISTANCE;
 
 
@@ -20,10 +21,14 @@ public class CameraCollision
         _controller = controller;
     }
 
+    private float _duration = 1;
     public void CheckForCameraCollision()
     {
         RaycastHit hit;
         bool hasHit = Physics.Linecast(_controller.position, _cameraMax, out hit, _playerLayerMask);
-        //_camera.position = !hasHit ? _defaultPosition : hit.point;
+        Debug.Log($"{hasHit}....{hit.collider.gameObject}");
+        var moveDestination = !hasHit ? _defaultPosition : hit.point;
+        _camera.position = !hasHit ? _defaultPosition : hit.point;
+        //_camera.position = Vector3.Lerp(_camera.position, moveDestination, _duration / Time.deltaTime);
     }
 }
