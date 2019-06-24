@@ -6006,6 +6006,28 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5878267940163084556, guid: 1c2941a7eb92ceb4b95497b896f61cc7,
+        type: 3}
+      propertyPath: StartQuestItems.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5878267940163084556, guid: 1c2941a7eb92ceb4b95497b896f61cc7,
+        type: 3}
+      propertyPath: StartEquipment.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5878267940163084556, guid: 1c2941a7eb92ceb4b95497b896f61cc7,
+        type: 3}
+      propertyPath: StartQuestItems.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: c9ca7691349a1c248a0ffc48f0577c73,
+        type: 2}
+    - target: {fileID: 5878267940163084556, guid: 1c2941a7eb92ceb4b95497b896f61cc7,
+        type: 3}
+      propertyPath: StartEquipment.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 3d0a4cd742ebdab498d5f744bd2613bd,
+        type: 2}
     - target: {fileID: 8069587850946548496, guid: 1c2941a7eb92ceb4b95497b896f61cc7,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -6140,17 +6162,6 @@ PrefabInstance:
       propertyPath: listeners.Array.data[6].response.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
-    - target: {fileID: 5878267940163084556, guid: 1c2941a7eb92ceb4b95497b896f61cc7,
-        type: 3}
-      propertyPath: StartQuestItems.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5878267940163084556, guid: 1c2941a7eb92ceb4b95497b896f61cc7,
-        type: 3}
-      propertyPath: StartQuestItems.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: c9ca7691349a1c248a0ffc48f0577c73,
-        type: 2}
     - target: {fileID: 4983275865803535318, guid: 1c2941a7eb92ceb4b95497b896f61cc7,
         type: 3}
       propertyPath: m_AnchorMin.y
