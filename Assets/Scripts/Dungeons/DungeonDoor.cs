@@ -11,6 +11,8 @@ public class DungeonDoor : MonoBehaviour
     [SerializeField] private ScriptableEvent _onDoorClosed;
 
     private OpenCondition _condition;
+    private bool _inRange = false;
+
 
     public void OnDoorOpened()
     {
@@ -29,7 +31,7 @@ public class DungeonDoor : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.O))
+        if (Input.GetKeyDown(KeyCode.O) && _inRange)
         {
             if (GetComponent<OpenCondition>())
             {
@@ -52,6 +54,24 @@ public class DungeonDoor : MonoBehaviour
             }
         }
 
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        var player = other.GetComponent<PlayerController>();
+        if (player)
+        {
+            _inRange = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        var player = other.GetComponent<PlayerController>();
+        if (player)
+        {
+            _inRange = false;
+        }
     }
 
 }

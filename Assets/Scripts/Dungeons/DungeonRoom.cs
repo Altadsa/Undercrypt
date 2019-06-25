@@ -7,10 +7,10 @@ public class DungeonRoom : MonoBehaviour
     [SerializeField] GameObject _roomAssets;
 
 
-    private void Awake()
-    {
-        //_roomAssets.SetActive(Enabled);
-    }
+    //private void Awake()
+    //{
+    //    _roomAssets.SetActive(Enabled);
+    //}
 
     public void ToggleRoom()
     {
