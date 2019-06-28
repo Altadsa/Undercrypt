@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using GEV;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "GEV/Component ItemEvent")]
+[CreateAssetMenu(menuName = "GEV/Item Event")]
 public class ItemEvent : ScriptableObject
 {
     List<ItemEventListener> listeners = new List<ItemEventListener>();
