@@ -12,4 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f887c908d555c884eba12cb471df92cc, type: 3}
   m_Name: Problem
   m_EditorClassIdentifier: 
-  _dialogueSentences: []
+  _dialogueSentences:
+  - You....You took out those skeletons like it was nothing. You must be really powerful.
+  - Oh, I'm A....Anjie, nice to meet you. I'm from the town up on the hill, Dunnmar.
+  - It used to be a town bustling with life, now people are either fleeing or falling
+    victim to the evil plaguing the town.
+  - You see, many years ago, there was a man who lived where the town hall was. He
+    used.......well, he used dark magic, and he kidnapped travellers on the roads
+    and sacrified them for his rituals.
+  - Eventually, the Army stepped in and destroy his manor. They dismembered him and
+    sealed his remains deep beneath the earth, and his followers, were sealed under
+    with him.....alive.
+  - Some years later, after Dunnmar was founded, the dead began to rise and attack
+    the town. A man from the town wielding a magical blade, delved into the crypts
+    beneath the Graveyard to stop the evil.
+  - He sealed the evil away, and peace was restored. But now the dead have begun to
+    rise and evil seeps from the Undercrypt once more. We need a hero to put a stop
+    to this once and for all.

@@ -12,4 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f887c908d555c884eba12cb471df92cc, type: 3}
   m_Name: Resolution
   m_EditorClassIdentifier: 
-  _dialogueSentences: []
+  _dialogueSentences:
+  - I'm the Lord of Dunnmar, welcome to the town.
+  - What's this? A letter from Anjie....
+  - '"My Lord, the man before you destroyed a group of skeletons on the road to Dunnmar.
+    I know he can help us. I think you should give him the key to the Graveyard."'
+  - So Anjie wants me to trust some passing stranger. What if you're secretly an enemy?
+    Should I risk the town becoming more at risk by letting you anger whatever is
+    lurking in the Undercrypt?
+  - Then again.....I don't suppose I have a choice. We're already in grave danger,
+    if you'll forgive the pun. We need someone to stop the evil.
+  - If you think you're the man for the job, then come speak to me later when you're
+    ready. Thanks for the information.

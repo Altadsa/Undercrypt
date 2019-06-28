@@ -4,9 +4,8 @@
 public class QuestData : ScriptableObject
 {
     [SerializeField] int _questId;
-    [SerializeField] QuestItem _item;
+    [SerializeField] QuestItemData _item;
     public int QuestId => _questId;
-
-    public QuestItem QuestItem => _item;
+    public QuestItemData QuestItem => _item;
 
 }

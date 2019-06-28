@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c54f6db8e432da64fbfe7b9812379e94, type: 3}
   m_Name: Anjies Letter
   m_EditorClassIdentifier: 
-  _itemId: 0
-  _icon: {fileID: 0}
-  _name: 
-  _description: 
+  _itemId: 1
+  _icon: {fileID: -1029565098244657282, guid: b9767d7474a393c4ea68947856f846ff, type: 3}
+  _name: Anjie's Letter
+  _description: Anjie told you to deliver this to the Lord of Dunnmar.

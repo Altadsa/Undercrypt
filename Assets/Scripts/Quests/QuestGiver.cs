@@ -26,6 +26,7 @@ public class QuestGiver : NPC
                 _receiver.AddComponent<QuestReceiver>();
             }
 
+            Inventory.Instance.AddQuestItem(_data.QuestItem);
         }
         else
         {

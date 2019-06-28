@@ -10,13 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 423e78dd2fe6eed4b800e1581f1e22e1, type: 3}
-  m_Name: TheRoadToDunwall
+  m_Name: TheRoadToDunnmar
   m_EditorClassIdentifier: 
   _problem: {fileID: 0}
   _waiting: {fileID: 0}
   _resolution: {fileID: 0}
-  _questProposal: 
-  _accept: 
-  _acceptResponse: 
-  _decline: 
-  _declineResponse: 
+  _questProposal: Will you please help our town?
+  _accept: I'm always up for an adventure!
+  _acceptResponse: Thank you. Here, take this letter to the Lord of Dunnmar. He will
+    assist you.
+  _decline: No thanks, I was just passing through.
+  _declineResponse: I guess Dunnmar is doomed. I should probably head back to town.
