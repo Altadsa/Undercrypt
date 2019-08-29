@@ -25,9 +25,9 @@ public class CameraCollision
     public void CheckForCameraCollision()
     {
         RaycastHit hit;
-        bool hasHit = Physics.Linecast(_controller.position, _cameraMax, out hit, _playerLayerMask);
+        bool hasHit = Physics.Linecast(_controller.position, _cameraMax, out hit, (_playerLayerMask));
         var moveDestination = !hasHit ? _defaultPosition : hit.point;
-        _camera.position = !hasHit ? _defaultPosition : hit.point;
-        //_camera.position = Vector3.Lerp(_camera.position, moveDestination, _duration / Time.deltaTime);
+        //_camera.position = !hasHit ? _defaultPosition : hit.point;
+        _camera.position = Vector3.Lerp(_camera.position, moveDestination, _duration / Time.deltaTime);
     }
 }

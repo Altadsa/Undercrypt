@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17905472, g: 0.21854717, b: 0.2733919, a: 1}
+  m_IndirectSpecularColor: {r: 0.46022445, g: 0.5048387, b: 0.5595819, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -245,6 +245,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 101590997}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &143159542 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7615345626096769244, guid: 1c2941a7eb92ceb4b95497b896f61cc7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1845135792}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d0c5ffb579f13649bc658d1b3e718ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &165384868
 GameObject:
   m_ObjectHideFlags: 0
@@ -5769,6 +5781,12 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!4 &1606800766 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6108612243012454132, guid: 1c2941a7eb92ceb4b95497b896f61cc7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1845135792}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1629118420
 GameObject:
   m_ObjectHideFlags: 0
@@ -5799,6 +5817,27 @@ Transform:
   m_Father: {fileID: 2033332253}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1669880851 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4041504110876949785, guid: 1c2941a7eb92ceb4b95497b896f61cc7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1845135792}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1669880854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1669880851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b2ea3944e9bfa44fb44ba1330f6b485, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _targetingCamera: {fileID: 143159542}
+  moveSpeed: 10
+  Model: {fileID: 1606800766}
 --- !u!1 &1747065288
 GameObject:
   m_ObjectHideFlags: 0
@@ -6665,6 +6704,11 @@ PrefabInstance:
     - target: {fileID: 4983275864604275300, guid: 1c2941a7eb92ceb4b95497b896f61cc7,
         type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4041504110876949784, guid: 1c2941a7eb92ceb4b95497b896f61cc7,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
